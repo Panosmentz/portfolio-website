@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
+import Button from "@material-ui/core/Button";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import ListItem from "@material-ui/core/ListItem";
@@ -23,24 +24,26 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     height: 70,
-    backgroundColor: "#3d2f58",
+    backgroundColor: "#2a2829",
+    boxShadow: "none",
   },
 
   title: {
     flexGrow: 1,
     display: "flex",
+    marginLeft: "100px",
   },
   navList: {
     marginRight: "100px",
     display: "flex",
-    color: "#bf2c26",
+    color: "#2a2829",
   },
   button: {
     cursor: "pointer",
     position: "relative",
     color: "#fff",
     "&:hover": {
-      color: "green",
+      color: "orange",
     },
     "&::before": {
       content: '""',
@@ -49,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
       height: "3px",
       bottom: 0,
       left: 0,
-      backgroundColor: "red",
+      backgroundColor: "blue",
       visibility: "hidden",
       transform: "scaleX(0)",
       transition: "all 0.3s ease-in-out 0s",
@@ -65,8 +68,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   paper: {
-    background: "#fdcc51",
-    color: "#bf2c26",
+    background: "#2a2829",
+    color: "#2a2829",
     width: "100%",
     height: "50%",
   },
@@ -110,24 +113,27 @@ function Navbar() {
       <AppBar position="static" className={classes.appBar}>
         <Toolbar classes={classes.appBarWrapper}>
           <Typography variant="h6" className={classes.title}>
-            <motion.img
-              animate={{
-                scale: [1, 2, 2, 1, 1],
-                rotate: [0, 0, 270, 270, 0],
-                borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-              }}
-              transition={{
-                duration: 2,
-                ease: "easeInOut",
-                times: [0, 0.2, 0.5, 0.8, 1],
-                loop: 0,
-                repeatDelay: 1,
-              }}
-              src={logo}
-              alt="Little Red Edu Logo"
-              className={classes.logo}
-            />
+            <Button onClick={() => history.push("/")}>
+              <motion.img
+                animate={{
+                  scale: [1, 2, 2, 1, 1],
+                  rotate: [0, 0, 270, 270, 0],
+                  borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                }}
+                transition={{
+                  duration: 2,
+                  ease: "easeInOut",
+                  times: [0, 0.2, 0.5, 0.8, 1],
+                  loop: 0,
+                  repeatDelay: 1,
+                }}
+                src={logo}
+                alt="Pmentzdev logo"
+                className={classes.logo}
+              />
+            </Button>
           </Typography>
+
           {isMobile ? (
             <>
               <IconButton
