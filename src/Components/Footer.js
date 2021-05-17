@@ -42,10 +42,12 @@ const useStyles = makeStyles((theme) => ({
   },
   socials: {
     marginBottom: "25px",
+    transition: "transform 0.15s ease-in-out",
+    "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
   },
 }));
 
-export default function StickyFooter() {
+export default function Footer() {
   const classes = useStyles();
 
   return (

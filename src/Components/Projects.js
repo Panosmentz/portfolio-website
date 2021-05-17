@@ -68,7 +68,12 @@ const useStyles = makeStyles((theme) => ({
     height: "200px",
   },
   card: {
-    maxWidth: 345,
+    // backgroundColor: "#2a2829",
+    maxWidth: 500,
+    marginTop: "20px",
+    // marginLeft: "50px",
+    transition: "transform 0.15s ease-in-out",
+    "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
   },
   media: {
     height: 0,
@@ -107,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CenteredGrid() {
+export default function Projects() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -125,7 +130,7 @@ export default function CenteredGrid() {
             </Typography>
           </div>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={6} md={4}>
           <Card className={classes.card}>
             <CardHeader
               avatar={
@@ -235,7 +240,7 @@ export default function CenteredGrid() {
             </Collapse>
           </Card>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={6} md={4}>
           <Card className={classes.card}>
             <CardHeader
               avatar={
@@ -336,7 +341,7 @@ export default function CenteredGrid() {
             </Collapse>
           </Card>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={6} md={4}>
           <Card className={classes.card}>
             <CardHeader
               avatar={
@@ -432,7 +437,7 @@ export default function CenteredGrid() {
             </Collapse>
           </Card>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={6} md={4}>
           <Card className={classes.card}>
             <CardHeader
               avatar={
@@ -596,7 +601,7 @@ export default function CenteredGrid() {
             </Collapse>
           </Card>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={6} md={4}>
           <Card className={classes.card}>
             <CardHeader
               avatar={
@@ -679,7 +684,7 @@ export default function CenteredGrid() {
             </Collapse>
           </Card>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={6} md={4}>
           <Card className={classes.card}>
             <CardHeader
               avatar={
@@ -798,7 +803,7 @@ export default function CenteredGrid() {
             </Collapse>
           </Card>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={6} md={4}>
           <Card className={classes.card}>
             <CardHeader
               avatar={

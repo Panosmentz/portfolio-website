@@ -9,11 +9,12 @@ import avatar from "../assets/avatar.png";
 import server from "../assets/server.svg";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
+import Footer from "./Footer";
 
 const useStyles = makeStyles(() => ({
   particlesjs: {
     width: "100%",
-    height: "2000px",
+    height: "auto",
     backgroundColor: "#2a2829",
   },
   container: {
@@ -109,6 +110,7 @@ function Home() {
           </motion.div>
         </Grid>
       </Grid>
+      <Footer />
     </div>
   );
 }
