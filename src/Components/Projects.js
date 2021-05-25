@@ -52,10 +52,8 @@ import { ReactComponent as PassportIcon } from "../assets/tech icons/passport.sv
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    height: "100vh",
+    minHeight: "100vh",
+    width: "100%",
   },
   typography: {
     display: "flex",
@@ -69,8 +67,10 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     // backgroundColor: "#2a2829",
+
     maxWidth: 500,
     marginTop: "20px",
+
     // marginLeft: "50px",
     transition: "transform 0.15s ease-in-out",
     "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
@@ -121,16 +121,21 @@ export default function Projects() {
   };
 
   return (
-    <div className={classes.root}>
-      <Grid container>
-        <Grid item xs={12}>
-          <div className={classes.typography}>
-            <Typography variant="h2" component="h1" gutterBottom>
-              Projects
-            </Typography>
-          </div>
-        </Grid>
-        <Grid item xs={6} md={4}>
+    <Grid>
+      <div className={classes.typography}>
+        <Typography variant="h2" component="h1" gutterBottom>
+          Projects
+        </Typography>
+      </div>
+      <Grid
+        container
+        direction="row"
+        alignItems="center"
+        justify="center"
+        className={classes.root}
+        spacing={4}
+      >
+        <Grid item xs={12} md={4} align="center">
           <Card className={classes.card}>
             <CardHeader
               avatar={
@@ -240,7 +245,7 @@ export default function Projects() {
             </Collapse>
           </Card>
         </Grid>
-        <Grid item xs={6} md={4}>
+        <Grid item xs={12} md={4} align="center">
           <Card className={classes.card}>
             <CardHeader
               avatar={
@@ -341,7 +346,7 @@ export default function Projects() {
             </Collapse>
           </Card>
         </Grid>
-        <Grid item xs={6} md={4}>
+        <Grid item xs={12} md={4} align="center">
           <Card className={classes.card}>
             <CardHeader
               avatar={
@@ -437,7 +442,7 @@ export default function Projects() {
             </Collapse>
           </Card>
         </Grid>
-        <Grid item xs={6} md={4}>
+        <Grid item xs={12} md={4} align="center">
           <Card className={classes.card}>
             <CardHeader
               avatar={
@@ -601,7 +606,7 @@ export default function Projects() {
             </Collapse>
           </Card>
         </Grid>
-        <Grid item xs={6} md={4}>
+        <Grid item xs={12} md={4} align="center">
           <Card className={classes.card}>
             <CardHeader
               avatar={
@@ -684,7 +689,7 @@ export default function Projects() {
             </Collapse>
           </Card>
         </Grid>
-        <Grid item xs={6} md={4}>
+        <Grid item xs={12} md={4} align="center">
           <Card className={classes.card}>
             <CardHeader
               avatar={
@@ -803,7 +808,7 @@ export default function Projects() {
             </Collapse>
           </Card>
         </Grid>
-        <Grid item xs={6} md={4}>
+        <Grid item xs={12} md={4} align="center">
           <Card className={classes.card}>
             <CardHeader
               avatar={
@@ -890,6 +895,6 @@ export default function Projects() {
       <div className={classes.footer}>
         <Footer />
       </div>
-    </div>
+    </Grid>
   );
 }

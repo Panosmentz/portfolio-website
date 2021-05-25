@@ -516,7 +516,6 @@ export default function SkillsComponent() {
           label="Java"
         />
       </Grid>
-      <Grid item xs={12}></Grid>
     </div>
   );
 }
