@@ -114,10 +114,34 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Projects() {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded1, setExpanded1] = React.useState(false);
+  const [expanded2, setExpanded2] = React.useState(false);
+  const [expanded3, setExpanded3] = React.useState(false);
+  const [expanded4, setExpanded4] = React.useState(false);
+  const [expanded5, setExpanded5] = React.useState(false);
+  const [expanded6, setExpanded6] = React.useState(false);
+  const [expanded7, setExpanded7] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+  const handleExpandClick1 = () => {
+    setExpanded1(!expanded1);
+  };
+  const handleExpandClick2 = () => {
+    setExpanded2(!expanded2);
+  };
+  const handleExpandClick3 = () => {
+    setExpanded3(!expanded3);
+  };
+  const handleExpandClick4 = () => {
+    setExpanded4(!expanded4);
+  };
+  const handleExpandClick5 = () => {
+    setExpanded5(!expanded5);
+  };
+  const handleExpandClick6 = () => {
+    setExpanded6(!expanded6);
+  };
+  const handleExpandClick7 = () => {
+    setExpanded7(!expanded7);
   };
 
   return (
@@ -184,16 +208,16 @@ export default function Projects() {
 
               <IconButton
                 className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded,
+                  [classes.expandOpen]: expanded1,
                 })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
+                onClick={handleExpandClick1}
+                aria-expanded={expanded1}
                 aria-label="show more"
               >
                 <ExpandMoreIcon />
               </IconButton>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Collapse in={expanded1} timeout="auto" unmountOnExit>
               <CardContent>
                 <Typography paragraph>Technologies:</Typography>
 
@@ -294,16 +318,16 @@ export default function Projects() {
 
               <IconButton
                 className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded,
+                  [classes.expandOpen]: expanded2,
                 })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
+                onClick={handleExpandClick2}
+                aria-expanded={expanded2}
                 aria-label="show more"
               >
                 <ExpandMoreIcon />
               </IconButton>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Collapse in={expanded2} timeout="auto" unmountOnExit>
               <CardContent>
                 <Typography paragraph>Technologies:</Typography>
 
@@ -386,16 +410,16 @@ export default function Projects() {
 
               <IconButton
                 className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded,
+                  [classes.expandOpen]: expanded3,
                 })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
+                onClick={handleExpandClick3}
+                aria-expanded={expanded3}
                 aria-label="show more"
               >
                 <ExpandMoreIcon />
               </IconButton>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Collapse in={expanded3} timeout="auto" unmountOnExit>
               <CardContent>
                 <Typography paragraph>Technologies:</Typography>.
                 <Grid container direction="row" alignItems="center">
@@ -491,16 +515,16 @@ export default function Projects() {
 
               <IconButton
                 className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded,
+                  [classes.expandOpen]: expanded4,
                 })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
+                onClick={handleExpandClick4}
+                aria-expanded={expanded4}
                 aria-label="show more"
               >
                 <ExpandMoreIcon />
               </IconButton>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Collapse in={expanded4} timeout="auto" unmountOnExit>
               <CardContent>
                 <Typography paragraph>Technologies:</Typography>
 
@@ -655,16 +679,16 @@ export default function Projects() {
 
               <IconButton
                 className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded,
+                  [classes.expandOpen]: expanded5,
                 })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
+                onClick={handleExpandClick5}
+                aria-expanded={expanded5}
                 aria-label="show more"
               >
                 <ExpandMoreIcon />
               </IconButton>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Collapse in={expanded5} timeout="auto" unmountOnExit>
               <CardContent>
                 <Typography paragraph>Technologies:</Typography>
 
@@ -738,16 +762,16 @@ export default function Projects() {
 
               <IconButton
                 className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded,
+                  [classes.expandOpen]: expanded6,
                 })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
+                onClick={handleExpandClick6}
+                aria-expanded={expanded6}
                 aria-label="show more"
               >
                 <ExpandMoreIcon />
               </IconButton>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Collapse in={expanded6} timeout="auto" unmountOnExit>
               <CardContent>
                 <Typography paragraph>Technologies:</Typography>
 
@@ -857,16 +881,16 @@ export default function Projects() {
 
               <IconButton
                 className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded,
+                  [classes.expandOpen]: expanded7,
                 })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
+                onClick={handleExpandClick7}
+                aria-expanded={expanded7}
                 aria-label="show more"
               >
                 <ExpandMoreIcon />
               </IconButton>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Collapse in={expanded7} timeout="auto" unmountOnExit>
               <CardContent>
                 <Typography paragraph>Technologies:</Typography>
 
