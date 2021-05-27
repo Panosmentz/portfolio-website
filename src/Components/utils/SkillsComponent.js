@@ -51,7 +51,6 @@ import { ReactComponent as LinuxIcon } from "../../assets/tech icons/linux.svg";
 import { ReactComponent as SCCMIcon } from "../../assets/tech icons/sccm.svg";
 import { ReactComponent as CIcon } from "../../assets/tech icons/c.svg";
 import { Typography } from "@material-ui/core";
-import CustomChip from "../utils/CustomChip";
 
 const useStyles = makeStyles((theme) => ({
   root: {},

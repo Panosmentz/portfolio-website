@@ -8,7 +8,7 @@ import About from "./Components/About";
 import { makeStyles } from "@material-ui/core/styles";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-
+import "./App.css";
 const useStyles = makeStyles({
   app: {
     height: "100%",
