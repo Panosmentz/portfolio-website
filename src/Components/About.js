@@ -28,9 +28,9 @@ const useStyles = makeStyles((theme) => ({
   name: {},
   role: {},
   profile: {},
-  skills: {},
-  experience: {},
-  education: {},
+  skills: { marginTop: "50px" },
+  experience: { marginTop: "50px" },
+  education: { marginTop: "50px" },
   chip: {},
   avatar: {},
   accordion: {},
@@ -69,20 +69,20 @@ export default function About() {
         </Grid>
         <Grid item xs={12}>
           <div className={classes.name}>
-            <Typography variant="h4" component="h1" gutterBottom>
+            <Typography variant="h4" component="h1" gutterBottom align="center">
               Panagiotis Mentzelopoulos
             </Typography>
-            <Typography variant="h6" component="h1" gutterBottom>
+            <Typography variant="h6" component="h1" gutterBottom align="center">
               Software Engineer
             </Typography>
-            <Typography variant="h6" component="h1" gutterBottom>
+            <Typography variant="h6" component="h1" gutterBottom align="center">
               Email: pmentzdev@outlook.com Tel.: +353 83 391 7092
             </Typography>
           </div>
         </Grid>
         <Grid item xs={12} md={6}>
           <div className={classes.profile}>
-            <Typography variant="h4" component="h1" gutterBottom>
+            <Typography variant="h4" component="h1" gutterBottom align="center">
               Profile
             </Typography>
             <Typography variant="h6" component="h1" gutterBottom>
@@ -100,7 +100,7 @@ export default function About() {
 
         <Grid item xs={12} md={6}>
           <div className={classes.skill}>
-            <Typography variant="h4" component="h1" gutterBottom>
+            <Typography variant="h4" component="h1" gutterBottom align="center">
               Skills
             </Typography>
             <SkillsComponent />
@@ -109,7 +109,7 @@ export default function About() {
 
         <Grid item xs={12} md={6}>
           <div className={classes.experience}>
-            <Typography variant="h4" component="h1" gutterBottom>
+            <Typography variant="h4" component="h1" gutterBottom align="center">
               Experience
             </Typography>
             <TimelineComponent />
@@ -118,7 +118,7 @@ export default function About() {
 
         <Grid item xs={12} md={6}>
           <div className={classes.education}>
-            <Typography variant="h4" component="h1" gutterBottom>
+            <Typography variant="h4" component="h1" gutterBottom align="center">
               Education
             </Typography>
             <AccordionComponent />

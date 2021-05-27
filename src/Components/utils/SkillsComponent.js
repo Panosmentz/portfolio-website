@@ -51,13 +51,21 @@ import { ReactComponent as LinuxIcon } from "../../assets/tech icons/linux.svg";
 import { ReactComponent as SCCMIcon } from "../../assets/tech icons/sccm.svg";
 import { ReactComponent as CIcon } from "../../assets/tech icons/c.svg";
 import { Typography } from "@material-ui/core";
+import CustomChip from "../utils/CustomChip";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
-  chip: {},
+  chip: {
+    marginTop: "10px",
+    backgroundColor: "#fff",
+    transition: "transform 0.15s ease-in-out",
+    fontSize: "15px",
+    "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
+  },
   avatar: {
     backgroundColor: "#fff",
   },
+  typography: { marginTop: "20px" },
 }));
 
 export default function SkillsComponent() {
@@ -65,66 +73,86 @@ export default function SkillsComponent() {
   return (
     <div>
       <Grid item xs={12}>
-        <Typography>Web Technologies</Typography>
+        <Typography className={classes.typography}>Web Technologies</Typography>
         <Chip
           className={classes.chip}
-          style={{ backgroundColor: "#fff" }}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <HTMLIcon />
             </Avatar>
           }
           label="HTML5"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <CssIcon />
             </Avatar>
           }
           label="CSS3"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <JavascriptIcon />
             </Avatar>
           }
           label="JavaScript"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <ReactJSIcon />
             </Avatar>
           }
           label="React JS"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <NodeJSIcon />
             </Avatar>
           }
           label="Node.JS"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <ExpressIcon />
             </Avatar>
           }
           label="Express.JS"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <JQueryIcon />
             </Avatar>
           }
@@ -132,137 +160,182 @@ export default function SkillsComponent() {
         />
       </Grid>
       <Grid item xs={12}>
-        <Typography>Web tools</Typography>
+        <Typography className={classes.typography}>Web tools</Typography>
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <FirebaseIcon />
             </Avatar>
           }
           label="Firebase"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <RESTAPIIcon />
             </Avatar>
           }
           label="REST APIs"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <MaterialUIIcon />
             </Avatar>
           }
           label="Material UI"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <BootstrapIcon />
             </Avatar>
           }
           label="Bootstrap"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <AxiosIcon />
             </Avatar>
           }
           label="Axios"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <JSONIcon />
             </Avatar>
           }
           label="JSON"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <NPMIcon />
             </Avatar>
           }
           label="NPM"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <AJAXIcon />
             </Avatar>
           }
           label="AJAX"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <LambdaIcon />
             </Avatar>
           }
           label="Lambda Functions"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <BcryptIcon />
             </Avatar>
           }
           label="Bcrypt"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <JWTIcon />
             </Avatar>
           }
           label="JSONWebToken"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <PassportIcon />
             </Avatar>
           }
           label="Passport.JS"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <FormikIcon />
             </Avatar>
           }
           label="Formik"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <EmailJSIcon />
             </Avatar>
           }
           label="Email.JS"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <FramerMotionIcon />
             </Avatar>
           }
@@ -270,38 +343,50 @@ export default function SkillsComponent() {
         />
       </Grid>
       <Grid item xs={12}>
-        <Typography>Databases</Typography>
+        <Typography className={classes.typography}>Databases</Typography>
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <FirestoreIcon />
             </Avatar>
           }
           label="Firebase Firestore"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <MySQLIcon />
             </Avatar>
           }
           label="MySQL"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <MongoDBIcon />
             </Avatar>
           }
           label="MongoDB"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <MongooseIcon />
             </Avatar>
           }
@@ -309,47 +394,62 @@ export default function SkillsComponent() {
         />
       </Grid>
       <Grid item xs={12}>
-        <Typography>Testing</Typography>
+        <Typography className={classes.typography}>Testing</Typography>
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <JestIcon />
             </Avatar>
           }
           label="Jest"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <EnzymeIcon />
             </Avatar>
           }
           label="Enzyme"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <TestcafeIcon />
             </Avatar>
           }
           label="Testcafe"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <CypressIcon />
             </Avatar>
           }
           label="Cypress"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <NightwatchIcon />
             </Avatar>
           }
@@ -357,29 +457,38 @@ export default function SkillsComponent() {
         />
       </Grid>
       <Grid item xs={12}>
-        <Typography>Tools</Typography>
+        <Typography className={classes.typography}>Tools</Typography>
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <PostmanIcon />
             </Avatar>
           }
           label="Postman"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <VSCodeIcon />
             </Avatar>
           }
           label="VS Code"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <FigmaIcon />
             </Avatar>
           }
@@ -387,20 +496,26 @@ export default function SkillsComponent() {
         />
       </Grid>
       <Grid item xs={12}>
-        <Typography>Version Control</Typography>
+        <Typography className={classes.typography}>Version Control</Typography>
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <GitIcon />
             </Avatar>
           }
           label="Git"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <GithubIcon />
             </Avatar>
           }
@@ -409,20 +524,26 @@ export default function SkillsComponent() {
       </Grid>
 
       <Grid item xs={12}>
-        <Typography>Deployment</Typography>
+        <Typography className={classes.typography}>Deployment</Typography>
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <HerokuIcon />
             </Avatar>
           }
           label="Heroku"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <NetlifyIcon />
             </Avatar>
           }
@@ -430,56 +551,76 @@ export default function SkillsComponent() {
         />
       </Grid>
       <Grid item xs={12}>
-        <Typography>System Administration</Typography>
+        <Typography className={classes.typography}>
+          System Administration
+        </Typography>
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <WindowsServer2012Icon />
             </Avatar>
           }
           label="Windows Server 2012"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <ActiveDirectoryIcon />
             </Avatar>
           }
           label="Windows Active Directory"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <Office365Icon />
             </Avatar>
           }
           label="Office 365 Admin Center"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <ExchangeIcon />
             </Avatar>
           }
           label="Microsoft Exchange"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <LinuxIcon />
             </Avatar>
           }
           label="Linux"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <SCCMIcon />
             </Avatar>
           }
@@ -487,29 +628,38 @@ export default function SkillsComponent() {
         />
       </Grid>
       <Grid item xs={12}>
-        <Typography>Other</Typography>
+        <Typography className={classes.typography}>Other</Typography>
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <PowerShellIcon />
             </Avatar>
           }
           label="PowerShell"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <CIcon />
             </Avatar>
           }
           label="C"
         />
         <Chip
-          style={{ backgroundColor: "#fff" }}
+          className={classes.chip}
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar
+              className={classes.avatar}
+              style={{ height: "30px", width: "30px" }}
+            >
               <JavaIcon />
             </Avatar>
           }
