@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   canvas: {
     marginTop: "50px",
-
+    backgroundColor: "black",
     pointerEvents: "none",
     overflow: "hidden",
   },
@@ -92,7 +92,7 @@ function Swarm({ count, mouse }) {
     <>
       <instancedMesh ref={mesh} args={[null, null, count]}>
         <sphereBufferGeometry attach="geometry" args={[1, 32, 32]} />
-        <meshPhongMaterial attach="material" color="black" />
+        <meshPhongMaterial attach="material" color="#023b36" />
       </instancedMesh>
     </>
   );
@@ -159,7 +159,7 @@ function Home2() {
               }}
               camera={{ fov: 75, position: [0, 0, 70] }}
               onCreated={({ gl }) => {
-                gl.setClearColor("#fff");
+                gl.setClearColor("black");
                 gl.toneMapping = THREE.ACESFilmicToneMapping;
                 gl.outputEncoding = THREE.sRGBEncoding;
               }}
@@ -169,7 +169,7 @@ function Home2() {
               <pointLight
                 position={[-100, -100, -100]}
                 intensity={5}
-                color="gray"
+                color="#00ffeb"
               />
               <Swarm mouse={mouse} count={150} />
 
