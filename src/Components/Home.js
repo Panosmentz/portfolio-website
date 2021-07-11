@@ -10,6 +10,7 @@ import server from "../assets/server.svg";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import Footer from "./Footer";
+import Home2 from "./Home2";
 
 const useStyles = makeStyles(() => ({
   particlesjs: {
