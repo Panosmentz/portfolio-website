@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -11,6 +11,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { toast } from "react-toastify";
 import Footer from "./Footer";
+import HashLoader from "react-spinners/HashLoader";
 
 const validationSchema = yup.object({
   name: yup.string("Enter your name").max(40).required("Your name is required"),
@@ -33,6 +34,14 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     marginTop: "100px",
+  },
+  loader: {
+    backgroundColor: "black",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    height: "100vh",
   },
   avatar: {
     margin: theme.spacing(1),
@@ -79,6 +88,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Contact() {
+  //loader
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 8000);
+  }, []);
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -123,88 +141,105 @@ function Contact() {
 
   const classes = useStyles();
   return (
-    <div className={classes.paper}>
-      <Container component="main" maxWidth="xs">
-        <Typography className={classes.typography} component="h1" variant="h5">
-          Contact{" "}
-          <Avatar
-            className={classes.avatar}
-            style={{ justifyContent: "center", display: "flex" }}
-          >
-            <ContactMailIcon />
-          </Avatar>
-        </Typography>
+    <div>
+      {loading ? (
+        <div className={classes.loader}>
+          <HashLoader color={"#143e55"} loading={loading} size={50} />
+        </div>
+      ) : (
+        <div className={classes.paper}>
+          <Container component="main" maxWidth="xs">
+            <Typography
+              className={classes.typography}
+              component="h1"
+              variant="h5"
+            >
+              Contact{" "}
+              <Avatar
+                className={classes.avatar}
+                style={{ justifyContent: "center", display: "flex" }}
+              >
+                <ContactMailIcon />
+              </Avatar>
+            </Typography>
 
-        <form className={classes.form} onSubmit={formik.handleSubmit} id="form">
-          <TextField
-            className={classes.textfield}
-            variant="outlined"
-            margin="normal"
-            fullWidth
-            id="name"
-            label="Name"
-            name="name"
-            autoComplete="name"
-            value={formik.values.name}
-            onChange={formik.handleChange}
-            error={formik.touched.name && Boolean(formik.errors.name)}
-            helperText={formik.touched.name && formik.errors.name}
-          />
-          <TextField
-            className={classes.textfield}
-            variant="outlined"
-            margin="normal"
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            error={formik.touched.email && Boolean(formik.errors.email)}
-            helperText={formik.touched.email && formik.errors.email}
-          />
-          <TextField
-            className={classes.textfield}
-            variant="outlined"
-            margin="normal"
-            fullWidth
-            id="subject"
-            label="Subject"
-            name="subject"
-            value={formik.values.subject}
-            onChange={formik.handleChange}
-            error={formik.touched.subject && Boolean(formik.errors.subject)}
-            helperText={formik.touched.subject && formik.errors.subject}
-          />
-          <TextField
-            className={classes.textfield}
-            variant="outlined"
-            margin="normal"
-            multiline
-            rows={6}
-            fullWidth
-            id="message"
-            label="Your message"
-            name="message"
-            value={formik.values.message}
-            onChange={formik.handleChange}
-            error={formik.touched.message && Boolean(formik.errors.message)}
-            helperText={formik.touched.message && formik.errors.message}
-          />
+            <form
+              className={classes.form}
+              onSubmit={formik.handleSubmit}
+              id="form"
+            >
+              <TextField
+                className={classes.textfield}
+                variant="outlined"
+                margin="normal"
+                fullWidth
+                id="name"
+                label="Name"
+                name="name"
+                autoComplete="name"
+                value={formik.values.name}
+                onChange={formik.handleChange}
+                error={formik.touched.name && Boolean(formik.errors.name)}
+                helperText={formik.touched.name && formik.errors.name}
+              />
+              <TextField
+                className={classes.textfield}
+                variant="outlined"
+                margin="normal"
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                error={formik.touched.email && Boolean(formik.errors.email)}
+                helperText={formik.touched.email && formik.errors.email}
+              />
+              <TextField
+                className={classes.textfield}
+                variant="outlined"
+                margin="normal"
+                fullWidth
+                id="subject"
+                label="Subject"
+                name="subject"
+                value={formik.values.subject}
+                onChange={formik.handleChange}
+                error={formik.touched.subject && Boolean(formik.errors.subject)}
+                helperText={formik.touched.subject && formik.errors.subject}
+              />
+              <TextField
+                className={classes.textfield}
+                variant="outlined"
+                margin="normal"
+                multiline
+                rows={6}
+                fullWidth
+                id="message"
+                label="Your message"
+                name="message"
+                value={formik.values.message}
+                onChange={formik.handleChange}
+                error={formik.touched.message && Boolean(formik.errors.message)}
+                helperText={formik.touched.message && formik.errors.message}
+              />
 
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            className={classes.submit}
-            onClick={handleReset}
-          >
-            SUBMIT
-          </Button>
-        </form>
-      </Container>
-      <Footer />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                className={classes.submit}
+                onClick={handleReset}
+              >
+                SUBMIT
+              </Button>
+            </form>
+          </Container>
+
+          <Footer />
+        </div>
+      )}
     </div>
   );
 }

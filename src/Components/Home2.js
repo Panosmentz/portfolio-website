@@ -1,4 +1,11 @@
-import React, { Suspense, useCallback, useRef, useMemo } from "react";
+import React, {
+  Suspense,
+  useCallback,
+  useRef,
+  useMemo,
+  useState,
+  useEffect,
+} from "react";
 import * as THREE from "three";
 import { Canvas, useFrame } from "react-three-fiber";
 import Effects from "./utils/Effects";
@@ -9,12 +16,22 @@ import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import Footer from "./Footer";
 import { Button } from "@material-ui/core";
+import { css } from "@emotion/react";
+import HashLoader from "react-spinners/HashLoader";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
     width: "100%",
     backgroundColor: "black",
+  },
+  loader: {
+    backgroundColor: "black",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    height: "100vh",
   },
   canvas: {
     marginTop: "50px",
@@ -98,6 +115,16 @@ function Swarm({ count, mouse }) {
   );
 }
 function Home2() {
+  //loader
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 8000);
+  }, []);
+
   const classes = useStyles();
   const mouse = useRef([0, 0]);
   const onMouseMove = useCallback(
@@ -107,97 +134,103 @@ function Home2() {
   );
   return (
     <div onMouseMove={onMouseMove}>
-      <Grid
-        container
-        direction="column"
-        alignItems="center"
-        justify="center"
-        className={classes.root}
-      >
-        <Grid item lg={12} xs={12} className={classes.typography}>
-          <motion.div
-            initial={{ y: "-1000px" }}
-            animate={{ y: "0px" }}
-            transition={{
-              type: "tween",
+      {loading ? (
+        <div className={classes.loader}>
+          <HashLoader color={"#143e55"} loading={loading} size={50} />
+        </div>
+      ) : (
+        <Grid
+          container
+          direction="column"
+          alignItems="center"
+          justify="center"
+          className={classes.root}
+        >
+          <Grid item lg={12} xs={12} className={classes.typography}>
+            <motion.div
+              initial={{ y: "-1000px" }}
+              animate={{ y: "0px" }}
+              transition={{
+                type: "tween",
 
-              duration: 2,
-            }}
-          >
-            <Typography display="inline" variant="h3">
-              Hi!
-              <motion.div
-                initial={{ x: "-10px" }}
-                animate={{ x: "0px" }}
-                transition={{
-                  type: "spring",
-                  stiffness: 1000,
-                  repeat: Infinity,
-                  duration: 1,
-                }}
-              >
-                👋
-              </motion.div>{" "}
-              I'm Panagiotis Mentzelopoulos,
-              <Typewriter
-                options={{
-                  strings: ["An IT Professional", "A Full-Stack developer"],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
-            </Typography>
-          </motion.div>
-        </Grid>
-        <Grid item lg={12} xs={12} className={classes.canvas}>
-          <div style={{ width: "99vw", height: "45vh" }}>
-            <Canvas
-              gl={{
-                alpha: false,
-                antialias: false,
-                logarithmicDepthBuffer: true,
-              }}
-              camera={{ fov: 75, position: [0, 0, 70] }}
-              onCreated={({ gl }) => {
-                gl.setClearColor("black");
-                gl.toneMapping = THREE.ACESFilmicToneMapping;
-                gl.outputEncoding = THREE.sRGBEncoding;
+                duration: 2,
               }}
             >
-              <ambientLight intensity={1.1} />
-              <pointLight position={[100, 100, 100]} intensity={2.2} />
-              <pointLight
-                position={[-100, -100, -100]}
-                intensity={5}
-                color="#00ffeb"
-              />
-              <Swarm mouse={mouse} count={150} />
+              <Typography display="inline" variant="h3">
+                Hi!
+                <motion.div
+                  initial={{ x: "-10px" }}
+                  animate={{ x: "0px" }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 1000,
+                    repeat: Infinity,
+                    duration: 1,
+                  }}
+                >
+                  👋
+                </motion.div>{" "}
+                I'm Panagiotis Mentzelopoulos,
+                <Typewriter
+                  options={{
+                    strings: ["An IT Professional", "A Full-Stack developer"],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+              </Typography>
+            </motion.div>
+          </Grid>
+          <Grid item lg={12} xs={12} className={classes.canvas}>
+            <div style={{ width: "99vw", height: "45vh" }}>
+              <Canvas
+                gl={{
+                  alpha: false,
+                  antialias: false,
+                  logarithmicDepthBuffer: true,
+                }}
+                camera={{ fov: 75, position: [0, 0, 70] }}
+                onCreated={({ gl }) => {
+                  gl.setClearColor("black");
+                  gl.toneMapping = THREE.ACESFilmicToneMapping;
+                  gl.outputEncoding = THREE.sRGBEncoding;
+                }}
+              >
+                <ambientLight intensity={1.1} />
+                <pointLight position={[100, 100, 100]} intensity={2.2} />
+                <pointLight
+                  position={[-100, -100, -100]}
+                  intensity={5}
+                  color="#00ffeb"
+                />
+                <Swarm mouse={mouse} count={150} />
 
-              <Suspense fallback={null}>
-                <Effects />
-              </Suspense>
-            </Canvas>
-          </div>
-        </Grid>
+                <Suspense fallback={null}>
+                  <Effects />
+                </Suspense>
+              </Canvas>
+            </div>
+          </Grid>
 
-        <Grid item lg={6} xs={12} className={classes.typography}>
-          <Typography display="inline" variant="h4">
-            I hold a BSc in Computer Science, currently working as a Senior IT
-            Support Engineer in Dublin. I am looking to make a career transition
-            to a Software Engineering role as I've been building Full-Stack web
-            applications while learning new technologies.
-          </Typography>
+          <Grid item lg={6} xs={12} className={classes.typography}>
+            <Typography display="inline" variant="h4">
+              I hold a BSc in Computer Science, currently working as a Senior IT
+              Support Engineer in Dublin. I am looking to make a career
+              transition to a Software Engineering role as I've been building
+              Full-Stack web applications while learning new technologies.
+            </Typography>
+          </Grid>
+          <Button
+            className={classes.button}
+            variant="contained"
+            size="large"
+            href="/about"
+          >
+            Learn More
+          </Button>
+          <Footer />
         </Grid>
-        <Button
-          className={classes.button}
-          variant="contained"
-          size="large"
-          href="/about"
-        >
-          Learn More
-        </Button>
-        <Footer />
-      </Grid>
+      )}
     </div>
   );
 }
