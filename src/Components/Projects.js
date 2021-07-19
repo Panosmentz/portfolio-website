@@ -49,8 +49,9 @@ import { ReactComponent as MongoDBIcon } from "../assets/tech icons/mongodb.svg"
 import { ReactComponent as MongooseIcon } from "../assets/tech icons/mongoose.svg";
 import { ReactComponent as NodeJSIcon } from "../assets/tech icons/nodejs-icon.svg";
 import { ReactComponent as PassportIcon } from "../assets/tech icons/passport.svg";
-import { css } from "@emotion/react";
 import HashLoader from "react-spinners/HashLoader";
+import "@fontsource/source-code-pro";
+import "@fontsource/source-code-pro/400.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -65,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "100vh",
   },
-  typography: {
+  title: {
     display: "flex",
     flexDirection: "column",
     backgroundImage: `url(${Wave2})`,
@@ -74,6 +75,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginTop: "100px",
     height: "200px",
+  },
+  typography: {
+    fontFamily: "Source Code Pro",
+    fontSize: "2.2rem",
+    fontWeight: "bold",
   },
   card: {
     // backgroundColor: "#2a2829",
@@ -99,6 +105,13 @@ const useStyles = makeStyles((theme) => ({
   expandOpen: {
     transform: "rotate(180deg)",
   },
+
+  description: {
+    fontFamily: "Source Code Pro",
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+  },
+
   avatar: {},
   icons: {
     color: "#2a2829",
@@ -131,7 +144,7 @@ export default function Projects() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 8000);
+    }, 1500);
   }, []);
 
   const [expanded1, setExpanded1] = React.useState(false);
@@ -172,8 +185,13 @@ export default function Projects() {
         </div>
       ) : (
         <Grid>
-          <div className={classes.typography}>
-            <Typography variant="h2" component="h1" gutterBottom>
+          <div className={classes.title}>
+            <Typography
+              className={classes.typography}
+              variant="h2"
+              component="h1"
+              gutterBottom
+            >
               Projects
             </Typography>
           </div>
@@ -208,6 +226,7 @@ export default function Projects() {
                     variant="body2"
                     color="textSecondary"
                     component="p"
+                    className={classes.description}
                   >
                     A WhatsApp clone. Built with React, Material UI, Firebase,
                     EmailJS, Formik and much more. Users can sign up with email
@@ -249,14 +268,19 @@ export default function Projects() {
                 </CardActions>
                 <Collapse in={expanded1} timeout="auto" unmountOnExit>
                   <CardContent>
-                    <Typography paragraph>Technologies:</Typography>
+                    <Typography className={classes.description} paragraph>
+                      Technologies:
+                    </Typography>
 
                     <Grid container direction="row" alignItems="center">
                       <Grid item>
                         <ReactJSIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> React JS</Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          React JS
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -265,7 +289,10 @@ export default function Projects() {
                         <MaterialUIIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Material UI</Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Material UI
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -274,7 +301,10 @@ export default function Projects() {
                         <FirebaseIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Firebase</Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Firebase
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -283,7 +313,10 @@ export default function Projects() {
                         <EmailJSIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> EmailJS</Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          EmailJS
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -292,7 +325,10 @@ export default function Projects() {
                         <FormikIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Formik-yup</Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Formik-yup
+                        </Typography>
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -322,6 +358,7 @@ export default function Projects() {
                     variant="body2"
                     color="textSecondary"
                     component="p"
+                    className={classes.description}
                   >
                     A stock portfolio where users can Sign Up/Sign In, search
                     for stocks, get information on them and follow/unfollow
@@ -363,14 +400,19 @@ export default function Projects() {
                 </CardActions>
                 <Collapse in={expanded2} timeout="auto" unmountOnExit>
                   <CardContent>
-                    <Typography paragraph>Technologies:</Typography>
+                    <Typography className={classes.description} paragraph>
+                      Technologies:
+                    </Typography>
 
                     <Grid container direction="row" alignItems="center">
                       <Grid item>
                         <ReactJSIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> React JS</Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          React JS
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -379,7 +421,10 @@ export default function Projects() {
                         <MaterialUIIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Material UI</Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Material UI
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -388,7 +433,10 @@ export default function Projects() {
                         <FirebaseIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Firebase </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Firebase{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -397,7 +445,10 @@ export default function Projects() {
                         <AxiosIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Axios</Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Axios
+                        </Typography>
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -427,6 +478,7 @@ export default function Projects() {
                     variant="body2"
                     color="textSecondary"
                     component="p"
+                    className={classes.description}
                   >
                     A ticket viewer using Zendesk's API. To log in, users enter
                     their Email Address and Password. If the credentials are
@@ -459,13 +511,19 @@ export default function Projects() {
                 </CardActions>
                 <Collapse in={expanded3} timeout="auto" unmountOnExit>
                   <CardContent>
-                    <Typography paragraph>Technologies:</Typography>.
+                    <Typography className={classes.description} paragraph>
+                      Technologies:
+                    </Typography>
+                    .
                     <Grid container direction="row" alignItems="center">
                       <Grid item>
                         <ReactJSIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> React JS</Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          React JS
+                        </Typography>
                       </Grid>
                     </Grid>
                     <Grid container direction="row" alignItems="center">
@@ -473,7 +531,10 @@ export default function Projects() {
                         <MaterialUIIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Material UI</Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Material UI
+                        </Typography>
                       </Grid>
                     </Grid>
                     <Grid container direction="row" alignItems="center">
@@ -481,7 +542,10 @@ export default function Projects() {
                         <AxiosIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Axios</Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Axios
+                        </Typography>
                       </Grid>
                     </Grid>
                     <Grid container direction="row" alignItems="center">
@@ -489,7 +553,10 @@ export default function Projects() {
                         <EnzymeIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Enzyme </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Enzyme{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
                     <Grid container direction="row" alignItems="center">
@@ -497,7 +564,10 @@ export default function Projects() {
                         <JestIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Jest </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Jest{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -527,6 +597,7 @@ export default function Projects() {
                     variant="body2"
                     color="textSecondary"
                     component="p"
+                    className={classes.description}
                   >
                     A fullstack web application to track your income and
                     expenses, built with the MERN stack. The back-end is written
@@ -537,7 +608,7 @@ export default function Projects() {
                 </CardContent>
                 <CardActions disableSpacing>
                   <a
-                    href="https://guarded-wildwood-06153.herokuapp.com/"
+                    href="https://mernexpenseapp.herokuapp.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -568,14 +639,19 @@ export default function Projects() {
                 </CardActions>
                 <Collapse in={expanded4} timeout="auto" unmountOnExit>
                   <CardContent>
-                    <Typography paragraph>Technologies:</Typography>
+                    <Typography className={classes.description} paragraph>
+                      Technologies:
+                    </Typography>
 
                     <Grid container direction="row" alignItems="center">
                       <Grid item>
                         <ReactJSIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> React JS</Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          React JS
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -584,7 +660,10 @@ export default function Projects() {
                         <NodeJSIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Node JS </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Node JS{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -593,7 +672,10 @@ export default function Projects() {
                         <ExpressIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Express JS </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Express JS{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -602,7 +684,10 @@ export default function Projects() {
                         <MongoDBIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> MongoDB </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          MongoDB{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -611,7 +696,10 @@ export default function Projects() {
                         <JWTIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> JSON Web Token </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          JSON Web Token{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -620,7 +708,10 @@ export default function Projects() {
                         <PassportIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Passport JS </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Passport JS{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -629,7 +720,10 @@ export default function Projects() {
                         <BcryptIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Bcrypt </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Bcrypt{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -638,7 +732,10 @@ export default function Projects() {
                         <MongooseIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Mongoose </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Mongoose{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -647,7 +744,10 @@ export default function Projects() {
                         <AxiosIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Axios </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Axios{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -656,7 +756,10 @@ export default function Projects() {
                         <BootstrapIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Bootstrap </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Bootstrap{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -665,7 +768,10 @@ export default function Projects() {
                         <FramerMotionIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Framer Motion </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Framer Motion{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -695,6 +801,7 @@ export default function Projects() {
                     variant="body2"
                     color="textSecondary"
                     component="p"
+                    className={classes.description}
                   >
                     A recipe finder application. Simply search for an ingredient
                     and a list of recipes will be presented to you. The
@@ -736,14 +843,19 @@ export default function Projects() {
                 </CardActions>
                 <Collapse in={expanded5} timeout="auto" unmountOnExit>
                   <CardContent>
-                    <Typography paragraph>Technologies:</Typography>
+                    <Typography className={classes.description} paragraph>
+                      Technologies:
+                    </Typography>
 
                     <Grid container direction="row" alignItems="center">
                       <Grid item>
                         <ReactJSIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> React JS </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          React JS{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -752,7 +864,10 @@ export default function Projects() {
                         <FramerMotionIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Framer Motion </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Framer Motion{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -782,6 +897,7 @@ export default function Projects() {
                     variant="body2"
                     color="textSecondary"
                     component="p"
+                    className={classes.description}
                   >
                     A weather forecast application using the DarkSky Web API.
                     The App prompts you to allow your location and gives you the
@@ -823,14 +939,19 @@ export default function Projects() {
                 </CardActions>
                 <Collapse in={expanded6} timeout="auto" unmountOnExit>
                   <CardContent>
-                    <Typography paragraph>Technologies:</Typography>
+                    <Typography className={classes.description} paragraph>
+                      Technologies:
+                    </Typography>
 
                     <Grid container direction="row" alignItems="center">
                       <Grid item>
                         <HTMLIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> HTML </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          HTML{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -839,7 +960,10 @@ export default function Projects() {
                         <CssIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> CSS </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          CSS{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -848,7 +972,10 @@ export default function Projects() {
                         <JavascriptIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> JavaScript </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          JavaScript{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -857,7 +984,10 @@ export default function Projects() {
                         <LambdaIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> AWS Lambda Functions </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          AWS Lambda Functions{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -866,7 +996,10 @@ export default function Projects() {
                         <JQueryIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> jQuery </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          jQuery{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -875,7 +1008,10 @@ export default function Projects() {
                         <BootstrapIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Bootstrap </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Bootstrap{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -905,6 +1041,7 @@ export default function Projects() {
                     variant="body2"
                     color="textSecondary"
                     component="p"
+                    className={classes.description}
                   >
                     This is a Java application that allows users to create and
                     edit auctions as well as place bids. This application
@@ -946,14 +1083,19 @@ export default function Projects() {
                 </CardActions>
                 <Collapse in={expanded7} timeout="auto" unmountOnExit>
                   <CardContent>
-                    <Typography paragraph>Technologies:</Typography>
+                    <Typography className={classes.description} paragraph>
+                      Technologies:
+                    </Typography>
 
                     <Grid container direction="row" alignItems="center">
                       <Grid item>
                         <JavaIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> Java </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Java{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
 
@@ -962,7 +1104,10 @@ export default function Projects() {
                         <MySQLIcon className={classes.techicon} />
                       </Grid>
                       <Grid item>
-                        <Typography> MySQL </Typography>
+                        <Typography className={classes.description}>
+                          {" "}
+                          MySQL{" "}
+                        </Typography>
                       </Grid>
                     </Grid>
                   </CardContent>

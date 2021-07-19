@@ -51,15 +51,21 @@ import { ReactComponent as LinuxIcon } from "../../assets/tech icons/linux.svg";
 import { ReactComponent as SCCMIcon } from "../../assets/tech icons/sccm.svg";
 import { ReactComponent as CIcon } from "../../assets/tech icons/c.svg";
 import { Typography } from "@material-ui/core";
+import "@fontsource/source-code-pro";
+import "@fontsource/source-code-pro/400.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {},
   chip: {
     marginTop: "10px",
+    marginLeft: "15px",
     backgroundColor: "#fff",
     transition: "transform 0.15s ease-in-out",
     fontSize: "15px",
     "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
+    fontFamily: "Source Code Pro",
+    fontSize: "1rem",
+    fontWeight: "bold",
   },
   avatar: {
     backgroundColor: "#fff",
@@ -72,7 +78,12 @@ export default function SkillsComponent() {
   return (
     <div>
       <Grid item xs={12}>
-        <Typography className={classes.typography}>Web Technologies</Typography>
+        <Typography
+          className={classes.typography}
+          style={{ textDecoration: "underline" }}
+        >
+          Web Technologies
+        </Typography>
         <Chip
           className={classes.chip}
           avatar={
@@ -159,7 +170,12 @@ export default function SkillsComponent() {
         />
       </Grid>
       <Grid item xs={12}>
-        <Typography className={classes.typography}>Web tools</Typography>
+        <Typography
+          className={classes.typography}
+          style={{ textDecoration: "underline" }}
+        >
+          Web tools
+        </Typography>
         <Chip
           className={classes.chip}
           avatar={
@@ -342,7 +358,12 @@ export default function SkillsComponent() {
         />
       </Grid>
       <Grid item xs={12}>
-        <Typography className={classes.typography}>Databases</Typography>
+        <Typography
+          className={classes.typography}
+          style={{ textDecoration: "underline" }}
+        >
+          Databases
+        </Typography>
         <Chip
           className={classes.chip}
           avatar={
@@ -393,7 +414,12 @@ export default function SkillsComponent() {
         />
       </Grid>
       <Grid item xs={12}>
-        <Typography className={classes.typography}>Testing</Typography>
+        <Typography
+          className={classes.typography}
+          style={{ textDecoration: "underline" }}
+        >
+          Testing
+        </Typography>
         <Chip
           className={classes.chip}
           avatar={
@@ -456,7 +482,12 @@ export default function SkillsComponent() {
         />
       </Grid>
       <Grid item xs={12}>
-        <Typography className={classes.typography}>Tools</Typography>
+        <Typography
+          className={classes.typography}
+          style={{ textDecoration: "underline" }}
+        >
+          Tools
+        </Typography>
         <Chip
           className={classes.chip}
           avatar={
@@ -495,7 +526,12 @@ export default function SkillsComponent() {
         />
       </Grid>
       <Grid item xs={12}>
-        <Typography className={classes.typography}>Version Control</Typography>
+        <Typography
+          className={classes.typography}
+          style={{ textDecoration: "underline" }}
+        >
+          Version Control
+        </Typography>
         <Chip
           className={classes.chip}
           avatar={
@@ -523,7 +559,12 @@ export default function SkillsComponent() {
       </Grid>
 
       <Grid item xs={12}>
-        <Typography className={classes.typography}>Deployment</Typography>
+        <Typography
+          className={classes.typography}
+          style={{ textDecoration: "underline" }}
+        >
+          Deployment
+        </Typography>
         <Chip
           className={classes.chip}
           avatar={
@@ -550,7 +591,10 @@ export default function SkillsComponent() {
         />
       </Grid>
       <Grid item xs={12}>
-        <Typography className={classes.typography}>
+        <Typography
+          className={classes.typography}
+          style={{ textDecoration: "underline" }}
+        >
           System Administration
         </Typography>
         <Chip
@@ -627,7 +671,12 @@ export default function SkillsComponent() {
         />
       </Grid>
       <Grid item xs={12}>
-        <Typography className={classes.typography}>Other</Typography>
+        <Typography
+          className={classes.typography}
+          style={{ textDecoration: "underline" }}
+        >
+          Other
+        </Typography>
         <Chip
           className={classes.chip}
           avatar={

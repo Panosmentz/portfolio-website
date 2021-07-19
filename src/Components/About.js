@@ -2,17 +2,16 @@ import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Footer from "./Footer";
-import Wave2 from "../assets/wave2.svg";
 import Typography from "@material-ui/core/Typography";
 import SaveIcon from "@material-ui/icons/Save";
-import me from "../assets/me.jpg";
 import me2 from "../assets/me2.jpg";
-import me3 from "../assets/me3.jpg";
 import SkillsComponent from "./utils/SkillsComponent";
 import TimelineComponent from "./utils/TimelineComponent";
 import AccordionComponent from "./utils/AccordionComponent";
 import { Button } from "@material-ui/core";
 import HashLoader from "react-spinners/HashLoader";
+import "@fontsource/source-code-pro";
+import "@fontsource/source-code-pro/400.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,6 +26,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     width: "100%",
     height: "100vh",
+  },
+  typography: {
+    fontFamily: "Source Code Pro",
+    fontSize: "1.1rem",
+    fontWeight: "bold",
   },
 
   img: {
@@ -63,7 +67,7 @@ export default function About() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 8000);
+    }, 1500);
   }, []);
 
   return (
@@ -95,6 +99,7 @@ export default function About() {
             <Grid item xs={12}>
               <div className={classes.name}>
                 <Typography
+                  className={classes.typography}
                   variant="h4"
                   component="h1"
                   gutterBottom
@@ -103,6 +108,7 @@ export default function About() {
                   Panagiotis Mentzelopoulos
                 </Typography>
                 <Typography
+                  className={classes.typography}
                   variant="h6"
                   component="h1"
                   gutterBottom
@@ -111,6 +117,7 @@ export default function About() {
                   Software Engineer
                 </Typography>
                 <Typography
+                  className={classes.typography}
                   variant="h6"
                   component="h1"
                   gutterBottom
@@ -123,14 +130,21 @@ export default function About() {
             <Grid item xs={12} md={6}>
               <div className={classes.profile}>
                 <Typography
+                  className={classes.typography}
                   variant="h4"
                   component="h1"
                   gutterBottom
                   align="center"
+                  style={{ textDecoration: "underline" }}
                 >
                   Profile
                 </Typography>
-                <Typography variant="h6" component="h1" gutterBottom>
+                <Typography
+                  className={classes.typography}
+                  variant="h6"
+                  component="h1"
+                  gutterBottom
+                >
                   A dynamic, hands-on, detail-oriented and highly analytical IT
                   Professional with experience in service delivery, looking for
                   a career transition as a Software Engineer. Proven ability in
@@ -147,10 +161,12 @@ export default function About() {
             <Grid item xs={12} md={6}>
               <div className={classes.skill}>
                 <Typography
+                  className={classes.typography}
                   variant="h4"
                   component="h1"
                   gutterBottom
                   align="center"
+                  style={{ textDecoration: "underline" }}
                 >
                   Skills
                 </Typography>
@@ -161,10 +177,12 @@ export default function About() {
             <Grid item xs={12} md={6}>
               <div className={classes.experience}>
                 <Typography
+                  className={classes.typography}
                   variant="h4"
                   component="h1"
                   gutterBottom
                   align="center"
+                  style={{ textDecoration: "underline" }}
                 >
                   Experience
                 </Typography>
@@ -175,10 +193,12 @@ export default function About() {
             <Grid item xs={12} md={6}>
               <div className={classes.education}>
                 <Typography
+                  className={classes.typography}
                   variant="h4"
                   component="h1"
                   gutterBottom
                   align="center"
+                  style={{ textDecoration: "underline" }}
                 >
                   Education
                 </Typography>

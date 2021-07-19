@@ -12,6 +12,8 @@ import * as yup from "yup";
 import { toast } from "react-toastify";
 import Footer from "./Footer";
 import HashLoader from "react-spinners/HashLoader";
+import "@fontsource/source-code-pro";
+import "@fontsource/source-code-pro/400.css";
 
 const validationSchema = yup.object({
   name: yup.string("Enter your name").max(40).required("Your name is required"),
@@ -52,6 +54,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     color: "#2a2829",
+    fontFamily: "Source Code Pro",
+    fontSize: "1.2rem",
+    fontWeight: "bold",
   },
   form: {
     width: "100%",
@@ -70,19 +75,29 @@ const useStyles = makeStyles((theme) => ({
   textfield: {
     "& .MuiOutlinedInput-input": {
       color: "#2a2829",
+      fontFamily: "Source Code Pro",
+      fontSize: "1.2rem",
     },
     "& .MuiInputLabel-root": {
       color: "#2a2829",
+      fontFamily: "Source Code Pro",
+      fontSize: "1.2rem",
     },
     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
       borderColor: "#2a2829",
+      fontFamily: "Source Code Pro",
+      fontSize: "1.2rem",
     },
 
     "& .MuiInputLabel-outlined.Mui-focused": {
       color: "#2a2829",
+      fontFamily: "Source Code Pro",
+      fontSize: "1.2rem",
     },
     "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
       borderColor: "#2a2829",
+      fontFamily: "Source Code Pro",
+      fontSize: "1.2rem",
     },
   },
 }));
@@ -95,7 +110,7 @@ function Contact() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 8000);
+    }, 1500);
   }, []);
   const formik = useFormik({
     initialValues: {
@@ -120,7 +135,7 @@ function Contact() {
                 "Thank you for contacting me. Your form has been submitted",
                 {
                   position: "bottom-center",
-                  autoClose: 3000,
+                  autoClose: 1500,
                   hideProgressBar: false,
                   closeOnClick: true,
                   pauseOnHover: false,

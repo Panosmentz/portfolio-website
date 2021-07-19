@@ -13,7 +13,11 @@ import Drawer from "@material-ui/core/Drawer";
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import logo from "../assets/logo.png";
+import logo2 from "../assets/logo2.png";
 import { motion } from "framer-motion";
+import "@fontsource/source-code-pro";
+import "@fontsource/source-code-pro/400.css";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -24,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     height: 70,
-    backgroundColor: "#2a2829",
+    backgroundColor: "#000000",
     boxShadow: "none",
   },
 
@@ -43,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     color: "#fff",
     "&:hover": {
-      color: "orange",
+      color: "#7f10a1",
     },
     "&::before": {
       content: '""',
@@ -52,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
       height: "3px",
       bottom: 0,
       left: 0,
-      backgroundColor: "blue",
+      backgroundColor: "#7f10a1",
       visibility: "hidden",
       transform: "scaleX(0)",
       transition: "all 0.3s ease-in-out 0s",
@@ -63,12 +67,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   listItemText: {
-    fontFamily: "Roboto Slab",
+    fontFamily: "Source Code Pro",
     fontSize: "1.2rem",
     textAlign: "center",
   },
   paper: {
-    background: "#2a2829",
+    background: "#000000",
     color: "#2a2829",
     width: "100%",
     height: "50%",
@@ -113,7 +117,7 @@ function Navbar() {
       <AppBar position="static" className={classes.appBar}>
         <Toolbar classes={classes.appBarWrapper}>
           <Typography variant="h6" className={classes.title}>
-            <Button onClick={() => history.push("/")}>
+            <Button onClick={() => history.push("/")} className={classes.logo}>
               <motion.img
                 animate={{
                   scale: [1, 2, 2, 1, 1],
@@ -127,9 +131,8 @@ function Navbar() {
                   loop: 0,
                   repeatDelay: 1,
                 }}
-                src={logo}
+                src={logo2}
                 alt="Pmentzdev logo"
-                className={classes.logo}
               />
             </Button>
           </Typography>
