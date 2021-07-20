@@ -14,6 +14,8 @@ import Footer from "./Footer";
 import HashLoader from "react-spinners/HashLoader";
 import "@fontsource/source-code-pro";
 import "@fontsource/source-code-pro/400.css";
+import Particle from "./utils/Particles";
+import { Grid } from "@material-ui/core";
 
 const validationSchema = yup.object({
   name: yup.string("Enter your name").max(40).required("Your name is required"),
@@ -31,11 +33,18 @@ const validationSchema = yup.object({
 });
 
 const useStyles = makeStyles((theme) => ({
-  paper: {
+  root: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    marginTop: "100px",
+    backgroundColor: "black",
+  },
+  particle: {
+    position: "fixed",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    width: "100%",
+    height: "100%",
   },
   loader: {
     backgroundColor: "black",
@@ -47,13 +56,14 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: "#2a2829",
+    backgroundColor: "#7f10a1",
   },
   typography: {
+    marginTop: "100px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    color: "#2a2829",
+    color: "#fff",
     fontFamily: "Source Code Pro",
     fontSize: "1.2rem",
     fontWeight: "bold",
@@ -62,40 +72,37 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   button: {
-    color: "#2a2829",
-  },
-  submit: {
     margin: theme.spacing(3, 0, 2),
-    backgroundColor: "#2a2829",
-    color: "#fff",
+    backgroundColor: "#7f10a1",
     "&:hover": {
-      backgroundColor: "#403e3f",
+      backgroundColor: "#290036",
     },
+    width: "100px",
   },
   textfield: {
     "& .MuiOutlinedInput-input": {
-      color: "#2a2829",
+      color: "#fff",
       fontFamily: "Source Code Pro",
       fontSize: "1.2rem",
     },
     "& .MuiInputLabel-root": {
-      color: "#2a2829",
+      color: "#fff",
       fontFamily: "Source Code Pro",
       fontSize: "1.2rem",
     },
     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-      borderColor: "#2a2829",
+      borderColor: "#fff",
       fontFamily: "Source Code Pro",
       fontSize: "1.2rem",
     },
 
     "& .MuiInputLabel-outlined.Mui-focused": {
-      color: "#2a2829",
+      color: "#fff",
       fontFamily: "Source Code Pro",
       fontSize: "1.2rem",
     },
     "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-      borderColor: "#2a2829",
+      borderColor: "#fff",
       fontFamily: "Source Code Pro",
       fontSize: "1.2rem",
     },
@@ -159,11 +166,20 @@ function Contact() {
     <div>
       {loading ? (
         <div className={classes.loader}>
-          <HashLoader color={"#143e55"} loading={loading} size={50} />
+          <HashLoader color={"#7f10a1"} loading={loading} size={50} />
         </div>
       ) : (
-        <div className={classes.paper}>
-          <Container component="main" maxWidth="xs">
+        <Grid
+          container
+          direction="column"
+          alignItems="center"
+          justify="center"
+          className={classes.root}
+        >
+          <div className={classes.particle}>
+            <Particle />
+          </div>
+          <Grid item lg={12} xs={12}>
             <Typography
               className={classes.typography}
               component="h1"
@@ -177,7 +193,8 @@ function Contact() {
                 <ContactMailIcon />
               </Avatar>
             </Typography>
-
+          </Grid>
+          <Grid item lg={4} md={4} xs={12} align="center">
             <form
               className={classes.form}
               onSubmit={formik.handleSubmit}
@@ -244,16 +261,15 @@ function Contact() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                className={classes.submit}
+                className={classes.button}
                 onClick={handleReset}
               >
                 SUBMIT
               </Button>
             </form>
-          </Container>
-
+          </Grid>
           <Footer />
-        </div>
+        </Grid>
       )}
     </div>
   );

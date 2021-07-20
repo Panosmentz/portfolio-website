@@ -10,9 +10,9 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     margin: {
       margin: theme.spacing(1),
-      color: "#2a2829",
+      color: "#4c0063",
       "&:hover": {
-        backgroundColor: "#403e3f",
+        backgroundColor: "#7f10a1",
       },
     },
 

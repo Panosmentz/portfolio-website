@@ -83,14 +83,9 @@ function Home2() {
   }, []);
 
   const classes = useStyles();
-  const mouse = useRef([0, 0]);
-  const onMouseMove = useCallback(
-    ({ clientX: x, clientY: y }) =>
-      (mouse.current = [x - window.innerWidth / 2, y - window.innerHeight / 2]),
-    []
-  );
+
   return (
-    <div onMouseMove={onMouseMove}>
+    <div>
       {loading ? (
         <div className={classes.loader}>
           <HashLoader color={"#7f10a1"} loading={loading} size={50} />

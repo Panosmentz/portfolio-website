@@ -70,7 +70,13 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     backgroundColor: "#fff",
   },
-  typography: { marginTop: "20px" },
+  typography: {
+    marginTop: "40px",
+
+    fontFamily: "Source Code Pro",
+    fontSize: "1rem",
+    fontWeight: "bold",
+  },
 }));
 
 export default function SkillsComponent() {

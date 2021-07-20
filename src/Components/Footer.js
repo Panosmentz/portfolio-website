@@ -6,6 +6,7 @@ import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import Socials from "./utils/Socials";
 import Wave from "../assets/wave.svg";
+import FooterImage from "../assets/footer.svg";
 import "@fontsource/source-code-pro";
 import "@fontsource/source-code-pro/400.css";
 
@@ -25,12 +26,12 @@ function Copyright() {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
-    flexDirection: "column",
-    backgroundImage: `url(${Wave})`,
-    backgroundRepeat: "no-repeat",
+    backgroundImage: `url(${FooterImage})`,
     backgroundPosition: "center center",
+    backgroundRepeat: "no-repeat",
+    //  backgroundAttachment: "fixed",
     backgroundSize: "cover",
+
     width: "100%",
     alignItems: "center",
     marginTop: "100px",
@@ -43,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(2),
   },
   title: {
-    color: "#d7dbd8",
+    color: "#fff",
   },
   typography: {
     fontFamily: "Source Code Pro",

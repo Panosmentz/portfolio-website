@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Footer from "./Footer";
-import Wave2 from "../assets/wave2.svg";
+import ProjectsImage from "../assets/projects.svg";
 import clsx from "clsx";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -66,15 +66,15 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "100vh",
   },
-  title: {
-    display: "flex",
-    flexDirection: "column",
-    backgroundImage: `url(${Wave2})`,
+  banner: {
+    height: "100px",
+    color: "#fff",
+    backgroundImage: `url(${ProjectsImage})`,
+    backgroundPosition: "center center",
+    backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     width: "100%",
     alignItems: "center",
-    marginTop: "100px",
-    height: "200px",
   },
   typography: {
     fontFamily: "Source Code Pro",
@@ -82,18 +82,17 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
   },
   card: {
-    // backgroundColor: "#2a2829",
-
     maxWidth: 500,
-    marginTop: "20px",
-
-    // marginLeft: "50px",
-    transition: "transform 0.15s ease-in-out",
-    "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
+    marginTop: "80px",
+    //transition: "transform 0.15s ease-in-out",
+    // "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
+    "& .MuiFab-root": {
+      backgroundColor: "#fff",
+    },
   },
   media: {
     height: 0,
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "56.25%",
   },
   expand: {
     transform: "rotate(0deg)",
@@ -101,23 +100,21 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
+    "&:hover": {
+      backgroundColor: "#7f10a1",
+    },
   },
   expandOpen: {
     transform: "rotate(180deg)",
   },
-
   description: {
     fontFamily: "Source Code Pro",
-    fontSize: "1.2rem",
-    fontWeight: "bold",
+    fontSize: "1rem",
   },
-
-  avatar: {},
   icons: {
     color: "#2a2829",
-
     "&:hover": {
-      backgroundColor: "#403e3f",
+      backgroundColor: "#7f10a1",
     },
   },
   techicon: {
@@ -128,10 +125,6 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     textAlign: "center",
-  },
-  footer: {
-    marginTop: "250px",
-    width: "100%",
   },
 }));
 
@@ -181,943 +174,930 @@ export default function Projects() {
     <div>
       {loading ? (
         <div className={classes.loader}>
-          <HashLoader color={"#143e55"} loading={loading} size={50} />
+          <HashLoader color={"#7f10a1"} loading={loading} size={50} />
         </div>
       ) : (
-        <Grid>
-          <div className={classes.title}>
+        <Grid
+          container
+          direction="row"
+          alignItems="center"
+          justify="center"
+          className={classes.root}
+        >
+          <Grid item xs={12} className={classes.banner} align="center">
             <Typography
               className={classes.typography}
-              variant="h2"
               component="h1"
-              gutterBottom
+              variant="h5"
             >
               Projects
             </Typography>
-          </div>
-          <Grid
-            container
-            direction="row"
-            alignItems="center"
-            justify="center"
-            className={classes.root}
-            spacing={4}
-          >
-            <Grid item xs={12} md={4} align="center">
-              <Card className={classes.card}>
-                <CardHeader
-                  avatar={
-                    <Avatar
-                      aria-label="headshot"
-                      className={classes.avatar}
-                      src={Me}
-                    ></Avatar>
-                  }
-                  title="WhatsApp Clone"
-                  subheader="March 10, 2021"
-                />
-                <CardMedia
-                  className={classes.media}
-                  image={whatsapp}
-                  title="whatsapp"
-                />
-                <CardContent>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                    className={classes.description}
-                  >
-                    A WhatsApp clone. Built with React, Material UI, Firebase,
-                    EmailJS, Formik and much more. Users can sign up with email
-                    & password with a password reset feature or use their Google
-                    account to log in. Once logged in, users can view and create
-                    chat rooms.
-                  </Typography>
-                </CardContent>
-                <CardActions disableSpacing>
-                  <a
-                    href="https://youthful-haibt-148fc8.netlify.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Fab size="small" className={classes.icons}>
-                      <VisibilityIcon />
-                    </Fab>
-                  </a>
-                  <a
-                    href="https://github.com/Panosmentz/Whats-App-Clone"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Fab size="small" className={classes.icons}>
-                      <GithubIcon />
-                    </Fab>
-                  </a>
-
-                  <IconButton
-                    className={clsx(classes.expand, {
-                      [classes.expandOpen]: expanded1,
-                    })}
-                    onClick={handleExpandClick1}
-                    aria-expanded={expanded1}
-                    aria-label="show more"
-                  >
-                    <ExpandMoreIcon />
-                  </IconButton>
-                </CardActions>
-                <Collapse in={expanded1} timeout="auto" unmountOnExit>
-                  <CardContent>
-                    <Typography className={classes.description} paragraph>
-                      Technologies:
-                    </Typography>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <ReactJSIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          React JS
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <MaterialUIIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Material UI
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <FirebaseIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Firebase
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <EmailJSIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          EmailJS
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <FormikIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Formik-yup
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Collapse>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={4} align="center">
-              <Card className={classes.card}>
-                <CardHeader
-                  avatar={
-                    <Avatar
-                      aria-label="headshot"
-                      className={classes.avatar}
-                      src={Me}
-                    ></Avatar>
-                  }
-                  title="Stock Portfolio"
-                  subheader="December 17, 2020"
-                />
-                <CardMedia
-                  className={classes.media}
-                  image={stocks}
-                  title="stock portfolio"
-                />
-                <CardContent>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                    className={classes.description}
-                  >
-                    A stock portfolio where users can Sign Up/Sign In, search
-                    for stocks, get information on them and follow/unfollow
-                    stocks they are interested in. Technologies used in this
-                    full-stack project are : ReactJS, Material UI, Firebase,
-                    React-Toastify, Axios and more.
-                  </Typography>
-                </CardContent>
-                <CardActions disableSpacing>
-                  <a
-                    href="https://happy-snyder-f3436c.netlify.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Fab size="small" className={classes.icons}>
-                      <VisibilityIcon />
-                    </Fab>
-                  </a>
-                  <a
-                    href="https://github.com/Panosmentz/stock-portfolio"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Fab size="small" className={classes.icons}>
-                      <GithubIcon />
-                    </Fab>
-                  </a>
-
-                  <IconButton
-                    className={clsx(classes.expand, {
-                      [classes.expandOpen]: expanded2,
-                    })}
-                    onClick={handleExpandClick2}
-                    aria-expanded={expanded2}
-                    aria-label="show more"
-                  >
-                    <ExpandMoreIcon />
-                  </IconButton>
-                </CardActions>
-                <Collapse in={expanded2} timeout="auto" unmountOnExit>
-                  <CardContent>
-                    <Typography className={classes.description} paragraph>
-                      Technologies:
-                    </Typography>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <ReactJSIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          React JS
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <MaterialUIIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Material UI
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <FirebaseIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Firebase{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <AxiosIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Axios
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Collapse>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={4} align="center">
-              <Card className={classes.card}>
-                <CardHeader
-                  avatar={
-                    <Avatar
-                      aria-label="headshot"
-                      className={classes.avatar}
-                      src={Me}
-                    ></Avatar>
-                  }
-                  title="Ticket Viewer"
-                  subheader="October 8, 2020"
-                />
-                <CardMedia
-                  className={classes.media}
-                  image={tickets}
-                  title="Ticket Viewer"
-                />
-                <CardContent>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                    className={classes.description}
-                  >
-                    A ticket viewer using Zendesk's API. To log in, users enter
-                    their Email Address and Password. If the credentials are
-                    correct, users are able to see a list of their tickets and
-                    more information such as Priority, Status, Date Created and
-                    more. Fully responsive design using Material-UI.
-                  </Typography>
-                </CardContent>
-                <CardActions disableSpacing>
-                  <a
-                    href="https://github.com/Panosmentz/ticket-viewer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Fab size="small" className={classes.icons}>
-                      <GithubIcon />
-                    </Fab>
-                  </a>
-
-                  <IconButton
-                    className={clsx(classes.expand, {
-                      [classes.expandOpen]: expanded3,
-                    })}
-                    onClick={handleExpandClick3}
-                    aria-expanded={expanded3}
-                    aria-label="show more"
-                  >
-                    <ExpandMoreIcon />
-                  </IconButton>
-                </CardActions>
-                <Collapse in={expanded3} timeout="auto" unmountOnExit>
-                  <CardContent>
-                    <Typography className={classes.description} paragraph>
-                      Technologies:
-                    </Typography>
-                    .
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <ReactJSIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          React JS
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <MaterialUIIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Material UI
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <AxiosIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Axios
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <EnzymeIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Enzyme{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <JestIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Jest{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Collapse>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={4} align="center">
-              <Card className={classes.card}>
-                <CardHeader
-                  avatar={
-                    <Avatar
-                      aria-label="headshot"
-                      className={classes.avatar}
-                      src={Me}
-                    ></Avatar>
-                  }
-                  title="Expense Tracker"
-                  subheader="August 18, 2020"
-                />
-                <CardMedia
-                  className={classes.media}
-                  image={expenses}
-                  title="Expense Tracker"
-                />
-                <CardContent>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                    className={classes.description}
-                  >
-                    A fullstack web application to track your income and
-                    expenses, built with the MERN stack. The back-end is written
-                    in Node.js/Express, a remote noSQL database sits on MongoDB
-                    Atlas and the front-end is written in ReactJS with the use
-                    of React-Hooks.
-                  </Typography>
-                </CardContent>
-                <CardActions disableSpacing>
-                  <a
-                    href="https://mernexpenseapp.herokuapp.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Fab size="small" className={classes.icons}>
-                      <VisibilityIcon />
-                    </Fab>
-                  </a>
-                  <a
-                    href="https://github.com/Panosmentz/MERN-Expenses-App"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Fab size="small" className={classes.icons}>
-                      <GithubIcon />
-                    </Fab>
-                  </a>
-
-                  <IconButton
-                    className={clsx(classes.expand, {
-                      [classes.expandOpen]: expanded4,
-                    })}
-                    onClick={handleExpandClick4}
-                    aria-expanded={expanded4}
-                    aria-label="show more"
-                  >
-                    <ExpandMoreIcon />
-                  </IconButton>
-                </CardActions>
-                <Collapse in={expanded4} timeout="auto" unmountOnExit>
-                  <CardContent>
-                    <Typography className={classes.description} paragraph>
-                      Technologies:
-                    </Typography>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <ReactJSIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          React JS
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <NodeJSIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Node JS{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <ExpressIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Express JS{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <MongoDBIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          MongoDB{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <JWTIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          JSON Web Token{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <PassportIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Passport JS{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <BcryptIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Bcrypt{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <MongooseIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Mongoose{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <AxiosIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Axios{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <BootstrapIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Bootstrap{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <FramerMotionIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Framer Motion{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Collapse>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={4} align="center">
-              <Card className={classes.card}>
-                <CardHeader
-                  avatar={
-                    <Avatar
-                      aria-label="headshot"
-                      className={classes.avatar}
-                      src={Me}
-                    ></Avatar>
-                  }
-                  title="Recipe Finder"
-                  subheader="March 1, 2020"
-                />
-                <CardMedia
-                  className={classes.media}
-                  image={recipes}
-                  title="Recipe Finder"
-                />
-                <CardContent>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                    className={classes.description}
-                  >
-                    A recipe finder application. Simply search for an ingredient
-                    and a list of recipes will be presented to you. The
-                    application displays all ingredients needed, calories and
-                    nutrients. The app is using the edamam web API and was
-                    developed with HTML5, CSS3 and ReactJS.
-                  </Typography>
-                </CardContent>
-                <CardActions disableSpacing>
-                  <a
-                    href="https://nifty-davinci-b034e9.netlify.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Fab size="small" className={classes.icons}>
-                      <VisibilityIcon />
-                    </Fab>
-                  </a>
-                  <a
-                    href="https://github.com/Panosmentz/React-Recipes-App"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Fab size="small" className={classes.icons}>
-                      <GithubIcon />
-                    </Fab>
-                  </a>
-
-                  <IconButton
-                    className={clsx(classes.expand, {
-                      [classes.expandOpen]: expanded5,
-                    })}
-                    onClick={handleExpandClick5}
-                    aria-expanded={expanded5}
-                    aria-label="show more"
-                  >
-                    <ExpandMoreIcon />
-                  </IconButton>
-                </CardActions>
-                <Collapse in={expanded5} timeout="auto" unmountOnExit>
-                  <CardContent>
-                    <Typography className={classes.description} paragraph>
-                      Technologies:
-                    </Typography>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <ReactJSIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          React JS{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <FramerMotionIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Framer Motion{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Collapse>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={4} align="center">
-              <Card className={classes.card}>
-                <CardHeader
-                  avatar={
-                    <Avatar
-                      aria-label="headshot"
-                      className={classes.avatar}
-                      src={Me}
-                    ></Avatar>
-                  }
-                  title="Weather App"
-                  subheader="January 4, 2020"
-                />
-                <CardMedia
-                  className={classes.media}
-                  image={weather}
-                  title="Weather App"
-                />
-                <CardContent>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                    className={classes.description}
-                  >
-                    A weather forecast application using the DarkSky Web API.
-                    The App prompts you to allow your location and gives you the
-                    current and an hour-by-hour forecast based on your longitude
-                    and latitude. This was made with HTML5, CSS3, Bootstrap and
-                    Vanilla JavaScript.
-                  </Typography>
-                </CardContent>
-                <CardActions disableSpacing>
-                  <a
-                    href="https://musing-kalam-1029f1.netlify.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Fab size="small" className={classes.icons}>
-                      <VisibilityIcon />
-                    </Fab>
-                  </a>
-                  <a
-                    href="https://github.com/Panosmentz/WeatherAPP-netlify-aws-lambda"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Fab size="small" className={classes.icons}>
-                      <GithubIcon />
-                    </Fab>
-                  </a>
-
-                  <IconButton
-                    className={clsx(classes.expand, {
-                      [classes.expandOpen]: expanded6,
-                    })}
-                    onClick={handleExpandClick6}
-                    aria-expanded={expanded6}
-                    aria-label="show more"
-                  >
-                    <ExpandMoreIcon />
-                  </IconButton>
-                </CardActions>
-                <Collapse in={expanded6} timeout="auto" unmountOnExit>
-                  <CardContent>
-                    <Typography className={classes.description} paragraph>
-                      Technologies:
-                    </Typography>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <HTMLIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          HTML{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <CssIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          CSS{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <JavascriptIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          JavaScript{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <LambdaIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          AWS Lambda Functions{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <JQueryIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          jQuery{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <BootstrapIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Bootstrap{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Collapse>
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={4} align="center">
-              <Card className={classes.card}>
-                <CardHeader
-                  avatar={
-                    <Avatar
-                      aria-label="headshot"
-                      className={classes.avatar}
-                      src={Me}
-                    ></Avatar>
-                  }
-                  title="Auctions Project"
-                  subheader="July 12, 2018"
-                />
-                <CardMedia
-                  className={classes.media}
-                  image={auctions}
-                  title="Auction Project"
-                />
-                <CardContent>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                    className={classes.description}
-                  >
-                    This is a Java application that allows users to create and
-                    edit auctions as well as place bids. This application
-                    features User Authentication with credentials stored in the
-                    mySQL database, an administrator account with an admin
-                    console and more. Click on View Demo for more details.
-                  </Typography>
-                </CardContent>
-                <CardActions disableSpacing>
-                  <a
-                    href="https://www.youtube.com/watch?v=mrgYUsr4rBY&feature=youtu.be"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Fab size="small" className={classes.icons}>
-                      <VisibilityIcon />
-                    </Fab>
-                  </a>
-                  <a
-                    href="https://github.com/Panosmentz/softenglab"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Fab size="small" className={classes.icons}>
-                      <GithubIcon />
-                    </Fab>
-                  </a>
-
-                  <IconButton
-                    className={clsx(classes.expand, {
-                      [classes.expandOpen]: expanded7,
-                    })}
-                    onClick={handleExpandClick7}
-                    aria-expanded={expanded7}
-                    aria-label="show more"
-                  >
-                    <ExpandMoreIcon />
-                  </IconButton>
-                </CardActions>
-                <Collapse in={expanded7} timeout="auto" unmountOnExit>
-                  <CardContent>
-                    <Typography className={classes.description} paragraph>
-                      Technologies:
-                    </Typography>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <JavaIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          Java{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-
-                    <Grid container direction="row" alignItems="center">
-                      <Grid item>
-                        <MySQLIcon className={classes.techicon} />
-                      </Grid>
-                      <Grid item>
-                        <Typography className={classes.description}>
-                          {" "}
-                          MySQL{" "}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Collapse>
-              </Card>
-            </Grid>
           </Grid>
-          <div className={classes.footer}>
-            <Footer />
-          </div>
+          <Grid item xs={12} md={4} align="center">
+            <Card className={classes.card}>
+              <CardHeader
+                avatar={
+                  <Avatar
+                    aria-label="headshot"
+                    className={classes.avatar}
+                    src={Me}
+                  ></Avatar>
+                }
+                title="WhatsApp Clone"
+                subheader="March 10, 2021"
+              />
+              <CardMedia
+                className={classes.media}
+                image={whatsapp}
+                title="whatsapp"
+              />
+              <CardContent>
+                <Typography
+                  variant="body2"
+                  component="p"
+                  className={classes.description}
+                >
+                  A WhatsApp clone. Built with React, Material UI, Firebase,
+                  EmailJS, Formik and much more. Users can sign up with email &
+                  password with a password reset feature or use their Google
+                  account to log in. Once logged in, users can view and create
+                  chat rooms.
+                </Typography>
+              </CardContent>
+              <CardActions disableSpacing>
+                <a
+                  href="https://youthful-haibt-148fc8.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Fab size="small" className={classes.icons}>
+                    <VisibilityIcon />
+                  </Fab>
+                </a>
+                <a
+                  href="https://github.com/Panosmentz/Whats-App-Clone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Fab size="small" className={classes.icons}>
+                    <GithubIcon />
+                  </Fab>
+                </a>
+
+                <IconButton
+                  className={clsx(classes.expand, {
+                    [classes.expandOpen]: expanded1,
+                  })}
+                  onClick={handleExpandClick1}
+                  aria-expanded={expanded1}
+                  aria-label="show more"
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+              </CardActions>
+              <Collapse in={expanded1} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography className={classes.description} paragraph>
+                    Technologies:
+                  </Typography>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <ReactJSIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        React JS
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <MaterialUIIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Material UI
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <FirebaseIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Firebase
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <EmailJSIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        EmailJS
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <FormikIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Formik-yup
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Collapse>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4} align="center">
+            <Card className={classes.card}>
+              <CardHeader
+                avatar={
+                  <Avatar
+                    aria-label="headshot"
+                    className={classes.avatar}
+                    src={Me}
+                  ></Avatar>
+                }
+                title="Stock Portfolio"
+                subheader="December 17, 2020"
+              />
+              <CardMedia
+                className={classes.media}
+                image={stocks}
+                title="stock portfolio"
+              />
+              <CardContent>
+                <Typography
+                  variant="body2"
+                  component="p"
+                  className={classes.description}
+                >
+                  A stock portfolio where users can Sign Up/Sign In, search for
+                  stocks, get information on them and follow/unfollow stocks
+                  they are interested in. Technologies used in this full-stack
+                  project are : ReactJS, Material UI, Firebase, React-Toastify,
+                  Axios and more.
+                </Typography>
+              </CardContent>
+              <CardActions disableSpacing>
+                <a
+                  href="https://happy-snyder-f3436c.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Fab size="small" className={classes.icons}>
+                    <VisibilityIcon />
+                  </Fab>
+                </a>
+                <a
+                  href="https://github.com/Panosmentz/stock-portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Fab size="small" className={classes.icons}>
+                    <GithubIcon />
+                  </Fab>
+                </a>
+
+                <IconButton
+                  className={clsx(classes.expand, {
+                    [classes.expandOpen]: expanded2,
+                  })}
+                  onClick={handleExpandClick2}
+                  aria-expanded={expanded2}
+                  aria-label="show more"
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+              </CardActions>
+              <Collapse in={expanded2} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography className={classes.description} paragraph>
+                    Technologies:
+                  </Typography>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <ReactJSIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        React JS
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <MaterialUIIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Material UI
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <FirebaseIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Firebase{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <AxiosIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Axios
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Collapse>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4} align="center">
+            <Card className={classes.card}>
+              <CardHeader
+                avatar={
+                  <Avatar
+                    aria-label="headshot"
+                    className={classes.avatar}
+                    src={Me}
+                  ></Avatar>
+                }
+                title="Ticket Viewer"
+                subheader="October 8, 2020"
+              />
+              <CardMedia
+                className={classes.media}
+                image={tickets}
+                title="Ticket Viewer"
+              />
+              <CardContent>
+                <Typography
+                  variant="body2"
+                  component="p"
+                  className={classes.description}
+                >
+                  A ticket viewer using Zendesk's API. To log in, users enter
+                  their Email Address and Password. If the credentials are
+                  correct, users are able to see a list of their tickets and
+                  more information such as Priority, Status, Date Created and
+                  more. Fully responsive design using Material-UI.
+                </Typography>
+              </CardContent>
+              <CardActions disableSpacing>
+                <a
+                  href="https://github.com/Panosmentz/ticket-viewer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Fab size="small" className={classes.icons}>
+                    <GithubIcon />
+                  </Fab>
+                </a>
+
+                <IconButton
+                  className={clsx(classes.expand, {
+                    [classes.expandOpen]: expanded3,
+                  })}
+                  onClick={handleExpandClick3}
+                  aria-expanded={expanded3}
+                  aria-label="show more"
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+              </CardActions>
+              <Collapse in={expanded3} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography className={classes.description} paragraph>
+                    Technologies:
+                  </Typography>
+                  .
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <ReactJSIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        React JS
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <MaterialUIIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Material UI
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <AxiosIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Axios
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <EnzymeIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Enzyme{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <JestIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Jest{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Collapse>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4} align="center">
+            <Card className={classes.card}>
+              <CardHeader
+                avatar={
+                  <Avatar
+                    aria-label="headshot"
+                    className={classes.avatar}
+                    src={Me}
+                  ></Avatar>
+                }
+                title="Expense Tracker"
+                subheader="August 18, 2020"
+              />
+              <CardMedia
+                className={classes.media}
+                image={expenses}
+                title="Expense Tracker"
+              />
+              <CardContent>
+                <Typography
+                  variant="body2"
+                  component="p"
+                  className={classes.description}
+                >
+                  A fullstack web application to track your income and expenses,
+                  built with the MERN stack. The back-end is written in
+                  Node.js/Express, a remote noSQL database sits on MongoDB Atlas
+                  and the front-end is written in ReactJS with the use of
+                  React-Hooks.
+                </Typography>
+              </CardContent>
+              <CardActions disableSpacing>
+                <a
+                  href="https://mernexpenseapp.herokuapp.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Fab size="small" className={classes.icons}>
+                    <VisibilityIcon />
+                  </Fab>
+                </a>
+                <a
+                  href="https://github.com/Panosmentz/MERN-Expenses-App"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Fab size="small" className={classes.icons}>
+                    <GithubIcon />
+                  </Fab>
+                </a>
+
+                <IconButton
+                  className={clsx(classes.expand, {
+                    [classes.expandOpen]: expanded4,
+                  })}
+                  onClick={handleExpandClick4}
+                  aria-expanded={expanded4}
+                  aria-label="show more"
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+              </CardActions>
+              <Collapse in={expanded4} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography className={classes.description} paragraph>
+                    Technologies:
+                  </Typography>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <ReactJSIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        React JS
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <NodeJSIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Node JS{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <ExpressIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Express JS{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <MongoDBIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        MongoDB{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <JWTIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        JSON Web Token{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <PassportIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Passport JS{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <BcryptIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Bcrypt{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <MongooseIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Mongoose{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <AxiosIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Axios{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <BootstrapIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Bootstrap{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <FramerMotionIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Framer Motion{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Collapse>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4} align="center">
+            <Card className={classes.card}>
+              <CardHeader
+                avatar={
+                  <Avatar
+                    aria-label="headshot"
+                    className={classes.avatar}
+                    src={Me}
+                  ></Avatar>
+                }
+                title="Recipe Finder"
+                subheader="March 1, 2020"
+              />
+              <CardMedia
+                className={classes.media}
+                image={recipes}
+                title="Recipe Finder"
+              />
+              <CardContent>
+                <Typography
+                  variant="body2"
+                  component="p"
+                  className={classes.description}
+                >
+                  A recipe finder application. Simply search for an ingredient
+                  and a list of recipes will be presented to you. The
+                  application displays all ingredients needed, calories and
+                  nutrients. The app is using the edamam web API and was
+                  developed with HTML5, CSS3 and ReactJS.
+                </Typography>
+              </CardContent>
+              <CardActions disableSpacing>
+                <a
+                  href="https://nifty-davinci-b034e9.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Fab size="small" className={classes.icons}>
+                    <VisibilityIcon />
+                  </Fab>
+                </a>
+                <a
+                  href="https://github.com/Panosmentz/React-Recipes-App"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Fab size="small" className={classes.icons}>
+                    <GithubIcon />
+                  </Fab>
+                </a>
+
+                <IconButton
+                  className={clsx(classes.expand, {
+                    [classes.expandOpen]: expanded5,
+                  })}
+                  onClick={handleExpandClick5}
+                  aria-expanded={expanded5}
+                  aria-label="show more"
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+              </CardActions>
+              <Collapse in={expanded5} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography className={classes.description} paragraph>
+                    Technologies:
+                  </Typography>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <ReactJSIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        React JS{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <FramerMotionIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Framer Motion{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Collapse>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4} align="center">
+            <Card className={classes.card}>
+              <CardHeader
+                avatar={
+                  <Avatar
+                    aria-label="headshot"
+                    className={classes.avatar}
+                    src={Me}
+                  ></Avatar>
+                }
+                title="Weather App"
+                subheader="January 4, 2020"
+              />
+              <CardMedia
+                className={classes.media}
+                image={weather}
+                title="Weather App"
+              />
+              <CardContent>
+                <Typography
+                  variant="body2"
+                  component="p"
+                  className={classes.description}
+                >
+                  A weather forecast application using the DarkSky Web API. The
+                  App prompts you to allow your location and gives you the
+                  current and an hour-by-hour forecast based on your longitude
+                  and latitude. This was made with HTML5, CSS3, Bootstrap and
+                  Vanilla JavaScript.
+                </Typography>
+              </CardContent>
+              <CardActions disableSpacing>
+                <a
+                  href="https://musing-kalam-1029f1.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Fab size="small" className={classes.icons}>
+                    <VisibilityIcon />
+                  </Fab>
+                </a>
+                <a
+                  href="https://github.com/Panosmentz/WeatherAPP-netlify-aws-lambda"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Fab size="small" className={classes.icons}>
+                    <GithubIcon />
+                  </Fab>
+                </a>
+
+                <IconButton
+                  className={clsx(classes.expand, {
+                    [classes.expandOpen]: expanded6,
+                  })}
+                  onClick={handleExpandClick6}
+                  aria-expanded={expanded6}
+                  aria-label="show more"
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+              </CardActions>
+              <Collapse in={expanded6} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography className={classes.description} paragraph>
+                    Technologies:
+                  </Typography>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <HTMLIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        HTML{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <CssIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        CSS{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <JavascriptIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        JavaScript{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <LambdaIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        AWS Lambda Functions{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <JQueryIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        jQuery{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <BootstrapIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Bootstrap{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Collapse>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4} align="center">
+            <Card className={classes.card}>
+              <CardHeader
+                avatar={
+                  <Avatar
+                    aria-label="headshot"
+                    className={classes.avatar}
+                    src={Me}
+                  ></Avatar>
+                }
+                title="Auctions Project"
+                subheader="July 12, 2018"
+              />
+              <CardMedia
+                className={classes.media}
+                image={auctions}
+                title="Auction Project"
+              />
+              <CardContent>
+                <Typography
+                  variant="body2"
+                  component="p"
+                  className={classes.description}
+                >
+                  This is a Java application that allows users to create and
+                  edit auctions as well as place bids. This application features
+                  User Authentication with credentials stored in the mySQL
+                  database, an administrator account with an admin console and
+                  more. Click on View Demo for more details.
+                </Typography>
+              </CardContent>
+              <CardActions disableSpacing>
+                <a
+                  href="https://www.youtube.com/watch?v=mrgYUsr4rBY&feature=youtu.be"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Fab size="small" className={classes.icons}>
+                    <VisibilityIcon />
+                  </Fab>
+                </a>
+                <a
+                  href="https://github.com/Panosmentz/softenglab"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Fab size="small" className={classes.icons}>
+                    <GithubIcon />
+                  </Fab>
+                </a>
+
+                <IconButton
+                  className={clsx(classes.expand, {
+                    [classes.expandOpen]: expanded7,
+                  })}
+                  onClick={handleExpandClick7}
+                  aria-expanded={expanded7}
+                  aria-label="show more"
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+              </CardActions>
+              <Collapse in={expanded7} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography className={classes.description} paragraph>
+                    Technologies:
+                  </Typography>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <JavaIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        Java{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  <Grid container direction="row" alignItems="center">
+                    <Grid item>
+                      <MySQLIcon className={classes.techicon} />
+                    </Grid>
+                    <Grid item>
+                      <Typography className={classes.description}>
+                        {" "}
+                        MySQL{" "}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Collapse>
+            </Card>
+          </Grid>
+          <Footer />
         </Grid>
       )}
     </div>

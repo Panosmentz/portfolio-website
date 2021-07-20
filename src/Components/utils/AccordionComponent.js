@@ -8,7 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "500px",
+    width: "400px",
     textAlign: "center",
   },
   details: {
