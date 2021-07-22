@@ -5,17 +5,17 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #2a2829;
+  background: #440059;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #4a4547;
+  background: #7f10a1;
   border-radius: 12px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #635f61;
+  background: "grey";
   border-radius: 12px;
 }
