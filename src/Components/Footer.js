@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
   typography: {
     fontFamily: "Source Code Pro",
-    fontSize: "1.2rem",
+    fontSize: ".9rem",
   },
   socials: {
     marginBottom: "25px",

@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Footer from "./Footer";
 import Typography from "@material-ui/core/Typography";
+import ProjectsImage from "../assets/projects.svg";
 import Divider from "@material-ui/core/Divider";
 import SaveIcon from "@material-ui/icons/Save";
 import me2 from "../assets/me2.jpg";
@@ -17,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
     width: "100%",
-    marginTop: "50px",
   },
   loader: {
     backgroundColor: "black",
@@ -27,10 +27,25 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "100vh",
   },
+  banner: {
+    height: "100px",
+    backgroundImage: `url(${ProjectsImage})`,
+    backgroundPosition: "center center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    width: "100%",
+    alignItems: "center",
+  },
   typography: {
     fontFamily: "Source Code Pro",
     fontSize: "1.1rem",
     fontWeight: "bold",
+  },
+  title: {
+    fontFamily: "Source Code Pro",
+    fontSize: "1.8rem",
+    fontWeight: "bold",
+    marginTop: "35px",
   },
 
   img: {
@@ -43,17 +58,22 @@ const useStyles = makeStyles((theme) => ({
   profile: {},
   skills: { marginTop: "50px" },
   experience: { marginTop: "50px" },
-  education: { marginTop: "50px" },
+  education: {
+    marginTop: "50px",
+  },
   chip: {},
   avatar: {},
   accordion: {},
   button: {
+    textTransform: "none",
     marginTop: "40px",
     color: "#fff",
-    backgroundColor: "#143e55",
+    backgroundColor: "#7f10a1",
     "&:hover": {
-      backgroundColor: "#97abb6",
+      backgroundColor: "#290036",
     },
+    fontFamily: "Source Code Pro",
+    fontSize: "1.2rem",
   },
 
   //style={{ objectFit: "cover" }}
@@ -78,26 +98,24 @@ export default function About() {
           <HashLoader color={"#7f10a1"} loading={loading} size={50} />
         </div>
       ) : (
-        <Grid
-          container
-          direction="column"
-          alignItems="center"
-          justify="center"
-          className={classes.root}
-          spacing={4}
-        >
-          <Grid item xs={12}>
-            <div>
+        <div className={classes.banner}>
+          <Grid
+            container
+            direction="column"
+            alignItems="center"
+            justify="center"
+            className={classes.root}
+            spacing={4}
+          >
+            <Grid item xs={12}>
               <img
                 className={classes.img}
                 src={me2}
                 width="150"
                 height="150"
               ></img>
-            </div>
-          </Grid>
-          <Grid item xs={12}>
-            <div className={classes.name}>
+            </Grid>
+            <Grid item xs={12} className={classes.name}>
               <Typography
                 className={classes.typography}
                 variant="h4"
@@ -135,17 +153,15 @@ export default function About() {
               >
                 Tel.: +353 83 391 7092
               </Typography>
-            </div>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <div className={classes.profile}>
+            </Grid>
+            <Grid item xs={12} md={6} className={classes.profile}>
               <Typography
-                className={classes.typography}
+                className={classes.title}
                 variant="h4"
                 component="h1"
                 gutterBottom
                 align="center"
-                style={{ textDecoration: "underline", color: "#4c0063" }}
+                style={{ color: "#7f10a1" }}
               >
                 Profile
               </Typography>
@@ -165,71 +181,64 @@ export default function About() {
                 Knowledge of deployment on various web services. Continuous
                 learner that keeps up on with new technologies and trends.
               </Typography>
-            </div>
-          </Grid>
+            </Grid>
 
-          <Grid item xs={12} md={6}>
-            <div className={classes.skill}>
+            <Grid item xs={12} md={6} className={classes.skill}>
               <Typography
-                className={classes.typography}
+                className={classes.title}
                 variant="h4"
                 component="h1"
                 gutterBottom
                 align="center"
-                style={{ textDecoration: "underline", color: "#4c0063" }}
+                style={{ color: "#7f10a1" }}
               >
                 Skills
               </Typography>
               <SkillsComponent />
-            </div>
-          </Grid>
+            </Grid>
 
-          <Grid item xs={12} md={6}>
-            <div className={classes.experience}>
+            <Grid item xs={12} md={6} className={classes.experience}>
               <Typography
-                className={classes.typography}
+                className={classes.title}
                 variant="h4"
                 component="h1"
                 gutterBottom
                 align="center"
-                style={{ textDecoration: "underline", color: "#4c0063" }}
+                style={{ color: "#7f10a1" }}
               >
                 Experience
               </Typography>
               <TimelineComponent />
-            </div>
-          </Grid>
+            </Grid>
 
-          <Grid item xs={12} md={6}>
-            <div className={classes.education}>
+            <Grid item xs={12} md={6} className={classes.education}>
               <Typography
-                className={classes.typography}
+                className={classes.title}
                 variant="h4"
                 component="h1"
                 gutterBottom
                 align="center"
-                style={{ textDecoration: "underline", color: "#4c0063" }}
+                style={{ color: "#7f10a1" }}
               >
                 Education
               </Typography>
               <AccordionComponent />
-            </div>
-          </Grid>
+            </Grid>
 
-          <Grid item xs={12} md={6}>
-            <Button
-              className={classes.button}
-              variant="contained"
-              size="large"
-              href="https://store8.gofile.io/download/jwxmtE/18367d2ac00f8555651aec28eda406da/CV%20Panagiotis%20Mentzelopoulos%20Front%20End%20Developer.pdf"
-              target="_blank"
-              startIcon={<SaveIcon />}
-            >
-              Download PDF version
-            </Button>
+            <Grid item xs={12}>
+              <Button
+                className={classes.button}
+                variant="contained"
+                href="https://store8.gofile.io/download/jwxmtE/18367d2ac00f8555651aec28eda406da/CV%20Panagiotis%20Mentzelopoulos%20Front%20End%20Developer.pdf"
+                target="_blank"
+                startIcon={<SaveIcon />}
+              >
+                Download PDF version
+              </Button>
+            </Grid>
+            <Footer />
           </Grid>
-          <Footer />
-        </Grid>
+        </div>
       )}
     </div>
   );

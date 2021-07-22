@@ -7,12 +7,37 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "400px",
-    textAlign: "center",
+  root: {},
+  bachelor: {
+    fontFamily: "Source Code Pro",
+    fontSize: "1.2rem",
+    fontWeight: "bold",
   },
   details: {
     flexDirection: "column",
+  },
+  date: {
+    fontFamily: "Source Code Pro",
+    fontSize: "1.2rem",
+    textAlign: "center",
+  },
+  grade: {
+    marginTop: "30px",
+    fontFamily: "Source Code Pro",
+    fontSize: "1.2rem",
+    textAlign: "center",
+  },
+  coursework: {
+    marginTop: "30px",
+    fontFamily: "Source Code Pro",
+    fontSize: "1.2rem",
+    textAlign: "center",
+    fontWeight: "bold",
+  },
+  courses: {
+    marginTop: "20px",
+    fontFamily: "Source Code Pro",
+    fontSize: "1.2rem",
   },
 }));
 
@@ -25,23 +50,35 @@ export default function AccordionComponent() {
         aria-controls="education-content"
         id="education-header"
       >
-        <Typography>
+        <Typography className={classes.bachelor}>
           University of West Attica / BSc in Computer Systems Engineering
         </Typography>
       </AccordionSummary>
       <AccordionDetails className={classes.details}>
-        <Typography variant="subtitle1" gutterBottom>
+        <Typography className={classes.date} gutterBottom>
           SEP 2010 – AUG 2018, Athens, Greece
         </Typography>
-        <Typography variant="subtitle2" gutterBottom>
+        <Typography className={classes.grade} gutterBottom>
           Upper Second-Class Honours(2:1)
         </Typography>
-        <Typography variant="subtitle2" gutterBottom>
+        <Typography className={classes.coursework} gutterBottom>
           Relevant Coursework:
         </Typography>
-        <Typography variant="body1" gutterBottom>
-          Object Oriented Programming, Structured Programming(C), Algorithms and
-          Data Structures, Systems Kernel Programming, Parallel Processing
+
+        <Typography className={classes.courses} gutterBottom>
+          • Object Oriented Programming
+        </Typography>
+        <Typography className={classes.courses} gutterBottom>
+          • Structured Programming(C)
+        </Typography>
+        <Typography className={classes.courses} gutterBottom>
+          • Algorithms and Data Structures
+        </Typography>
+        <Typography className={classes.courses} gutterBottom>
+          • Systems Kernel Programming
+        </Typography>
+        <Typography className={classes.courses} gutterBottom>
+          • Parallel Processing
         </Typography>
       </AccordionDetails>
     </Accordion>

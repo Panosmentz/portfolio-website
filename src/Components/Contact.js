@@ -72,12 +72,15 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   button: {
+    color: "#fff",
     margin: theme.spacing(3, 0, 2),
     backgroundColor: "#7f10a1",
     "&:hover": {
       backgroundColor: "#290036",
     },
     width: "100px",
+    fontFamily: "Source Code Pro",
+    fontSize: "1.2rem",
   },
   textfield: {
     "& .MuiOutlinedInput-input": {

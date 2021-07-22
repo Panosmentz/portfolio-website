@@ -7,21 +7,32 @@ import TimelineSeparator from "@material-ui/lab/TimelineSeparator";
 import TimelineConnector from "@material-ui/lab/TimelineConnector";
 import TimelineContent from "@material-ui/lab/TimelineContent";
 import TimelineDot from "@material-ui/lab/TimelineDot";
-import { Paper } from "@material-ui/core";
+import { Paper, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
   },
   paperstyle: {
-    padding: "8px 1px",
+    padding: "20px 20px",
     textAlign: "center",
+    transition: "transform 0.15s ease-in-out",
+    "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
   },
   dot: {
-    backgroundColor: "#143e55",
+    backgroundColor: "#7f10a1",
   },
   connector: {
-    backgroundColor: "#143e55",
+    backgroundColor: "#7f10a1",
+  },
+  date: {
+    fontFamily: "Source Code Pro",
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+  },
+  job: {
+    fontFamily: "Source Code Pro",
+    fontSize: "1.2rem",
   },
 }));
 export default function TimelineComponent() {
@@ -42,8 +53,13 @@ export default function TimelineComponent() {
           </TimelineSeparator>
           <TimelineContent>
             <Paper elevation={5} className={classes.paperstyle}>
-              03/2018 - 09/2018 : Internship - IT Support Engineer @ Dixons
-              South-East Europe - Athens, Greece
+              <Typography className={classes.date}>
+                March 2018 - September 2018
+              </Typography>
+              <Typography className={classes.job}>
+                Internship - IT Support Engineer @ Dixons South-East Europe -
+                Athens, Greece
+              </Typography>
             </Paper>
           </TimelineContent>
         </TimelineItem>
@@ -54,8 +70,12 @@ export default function TimelineComponent() {
           </TimelineSeparator>
           <TimelineContent>
             <Paper elevation={5} className={classes.paperstyle}>
-              10/2019 - 09/2020 : IT Support Engineer @Evros Technology Group -
-              Dublin, Ireland
+              <Typography className={classes.date}>
+                November 2019 - September 2020
+              </Typography>
+              <Typography className={classes.job}>
+                IT Support Engineer @ Evros Technology Group - Dublin, Ireland
+              </Typography>
             </Paper>
           </TimelineContent>
         </TimelineItem>
@@ -66,8 +86,13 @@ export default function TimelineComponent() {
           </TimelineSeparator>
           <TimelineContent>
             <Paper elevation={5} className={classes.paperstyle}>
-              09/2020 - present : Senior IT Support Engineer @Evros Technology
-              Group - Dublin, Ireland
+              <Typography className={classes.date}>
+                September 2020 - present
+              </Typography>
+              <Typography className={classes.job}>
+                Senior IT Support Engineer @Evros Technology Group - Dublin,
+                Ireland
+              </Typography>
             </Paper>
           </TimelineContent>
         </TimelineItem>

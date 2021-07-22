@@ -55,7 +55,9 @@ import "@fontsource/source-code-pro";
 import "@fontsource/source-code-pro/400.css";
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  root: {
+    // textAlign: "center",
+  },
   chip: {
     marginTop: "10px",
     marginLeft: "15px",
@@ -71,8 +73,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#fff",
   },
   typography: {
-    marginTop: "40px",
-
+    marginTop: "20px",
     fontFamily: "Source Code Pro",
     fontSize: "1rem",
     fontWeight: "bold",
@@ -82,7 +83,13 @@ const useStyles = makeStyles((theme) => ({
 export default function SkillsComponent() {
   const classes = useStyles();
   return (
-    <div>
+    <Grid
+      container
+      direction="row"
+      alignItems="center"
+      justify="center"
+      className={classes.root}
+    >
       <Grid item xs={12}>
         <Typography
           className={classes.typography}
@@ -720,6 +727,6 @@ export default function SkillsComponent() {
           label="Java"
         />
       </Grid>
-    </div>
+    </Grid>
   );
 }

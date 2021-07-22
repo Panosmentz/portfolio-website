@@ -6,21 +6,16 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import GithubIcon from "@material-ui/icons/GitHub";
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    margin: {
-      margin: theme.spacing(1),
-      color: "#4c0063",
-      "&:hover": {
-        backgroundColor: "#7f10a1",
-      },
+const useStyles = makeStyles((theme) => ({
+  icon: {
+    margin: theme.spacing(1),
+    backgroundColor: "#fff",
+    color: "#4c0063",
+    "&:hover": {
+      backgroundColor: "#000",
     },
-
-    extendedIcon: {
-      marginRight: theme.spacing(1),
-    },
-  })
-);
+  },
+}));
 
 export default function SocialMediaButtons() {
   const classes = useStyles();
@@ -32,7 +27,7 @@ export default function SocialMediaButtons() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Fab size="small" className={classes.margin}>
+          <Fab size="small" className={classes.icon}>
             <GithubIcon />
           </Fab>
         </a>
@@ -41,7 +36,7 @@ export default function SocialMediaButtons() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Fab size="small" className={classes.margin}>
+          <Fab size="small" className={classes.icon}>
             <LinkedInIcon />
           </Fab>
         </a>
@@ -50,7 +45,7 @@ export default function SocialMediaButtons() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Fab size="small" className={classes.margin}>
+          <Fab size="small" className={classes.icon}>
             <FacebookIcon />
           </Fab>
         </a>
@@ -60,7 +55,7 @@ export default function SocialMediaButtons() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Fab size="small" className={classes.margin}>
+          <Fab size="small" className={classes.icon}>
             <InstagramIcon />
           </Fab>
         </a>

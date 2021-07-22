@@ -12,13 +12,11 @@ import { useHistory } from "react-router-dom";
 import Drawer from "@material-ui/core/Drawer";
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
-import logo from "../assets/logo.png";
 import logo2 from "../assets/logo2.png";
-import { motion } from "framer-motion";
 import "@fontsource/source-code-pro";
 import "@fontsource/source-code-pro/400.css";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: "flex",
   },
@@ -40,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   navList: {
     marginRight: "100px",
     display: "flex",
-    color: "#2a2829",
+    color: "#7f10a1",
   },
   button: {
     cursor: "pointer",
@@ -73,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     background: "#000000",
-    color: "#2a2829",
+    color: "#7f10a1",
     width: "100%",
     height: "50%",
   },
