@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Source Code Pro",
     fontSize: "1.8rem",
     fontWeight: "bold",
-    marginTop: "35px",
+    marginTop: "50px",
   },
 
   img: {
@@ -105,7 +105,6 @@ export default function About() {
             alignItems="center"
             justify="center"
             className={classes.root}
-            spacing={4}
           >
             <Grid item xs={12}>
               <img

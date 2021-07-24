@@ -10,9 +10,9 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     margin: theme.spacing(1),
     backgroundColor: "#fff",
-    color: "#4c0063",
+    color: "#7f10a1",
     "&:hover": {
-      backgroundColor: "#000",
+      backgroundColor: "#290036",
     },
   },
 }));

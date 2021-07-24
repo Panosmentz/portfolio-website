@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.shortest,
     }),
     "&:hover": {
-      backgroundColor: "#7f10a1",
+      backgroundColor: "#d7d7d9",
     },
   },
   expandOpen: {
@@ -114,7 +114,7 @@ const useStyles = makeStyles((theme) => ({
   icons: {
     color: "#2a2829",
     "&:hover": {
-      backgroundColor: "#7f10a1",
+      backgroundColor: "#d7d7d9",
     },
   },
   techicon: {
