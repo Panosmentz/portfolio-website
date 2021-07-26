@@ -84,8 +84,6 @@ const useStyles = makeStyles((theme) => ({
   card: {
     maxWidth: 500,
     marginTop: "80px",
-    //transition: "transform 0.15s ease-in-out",
-    // "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
     "& .MuiFab-root": {
       backgroundColor: "#fff",
     },
@@ -219,9 +217,9 @@ export default function Projects() {
                 >
                   A WhatsApp clone. Built with React, Material UI, Firebase,
                   EmailJS, Formik and much more. Users can sign up with email &
-                  password with a password reset feature or use their Google
-                  account to log in. Once logged in, users can view and create
-                  chat rooms.
+                  password or use their Google account to log in. The app
+                  features a password reset function and once logged in, users
+                  can view, create chat rooms and chat with other users.
                 </Typography>
               </CardContent>
               <CardActions disableSpacing>
@@ -348,11 +346,11 @@ export default function Projects() {
                   component="p"
                   className={classes.description}
                 >
-                  A stock portfolio where users can Sign Up/Sign In, search for
-                  stocks, get information on them and follow/unfollow stocks
+                  A stock portfolio app where users can Sign Up/Sign In, search
+                  for stocks, get information on them and follow/unfollow stocks
                   they are interested in. Technologies used in this full-stack
                   project are : ReactJS, Material UI, Firebase, React-Toastify,
-                  Axios and more.
+                  Axios and more. The app features a fully responsive design.
                 </Typography>
               </CardContent>
               <CardActions disableSpacing>
@@ -468,9 +466,9 @@ export default function Projects() {
                   className={classes.description}
                 >
                   A ticket viewer using Zendesk's API. To log in, users enter
-                  their Email Address and Password. If the credentials are
-                  correct, users are able to see a list of their tickets and
-                  more information such as Priority, Status, Date Created and
+                  their email Address and password supplied by Zendesk. On
+                  successfull log in, users are able to see a list of their
+                  tickets and details such as Priority, Status, Date Created and
                   more. Fully responsive design using Material-UI.
                 </Typography>
               </CardContent>
@@ -884,10 +882,10 @@ export default function Projects() {
                   className={classes.description}
                 >
                   A weather forecast application using the DarkSky Web API. The
-                  App prompts you to allow your location and gives you the
-                  current and an hour-by-hour forecast based on your longitude
-                  and latitude. This was made with HTML5, CSS3, Bootstrap and
-                  Vanilla JavaScript.
+                  App prompts users to allow their location and gives users the
+                  current weather prediction and an hourly forecast based on
+                  longitude and latitude. This was made with HTML5, CSS3,
+                  Bootstrap and Vanilla JavaScript.
                 </Typography>
               </CardContent>
               <CardActions disableSpacing>

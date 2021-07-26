@@ -1,11 +1,9 @@
 import React from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import Socials from "./utils/Socials";
-import Wave from "../assets/wave.svg";
 import FooterImage from "../assets/footer.svg";
 import "@fontsource/source-code-pro";
 import "@fontsource/source-code-pro/400.css";
@@ -29,9 +27,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url(${FooterImage})`,
     backgroundPosition: "center center",
     backgroundRepeat: "no-repeat",
-    //  backgroundAttachment: "fixed",
     backgroundSize: "cover",
-
     width: "100%",
     alignItems: "center",
     marginTop: "100px",

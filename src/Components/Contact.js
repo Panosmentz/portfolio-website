@@ -6,7 +6,6 @@ import Avatar from "@material-ui/core/Avatar";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { toast } from "react-toastify";
@@ -34,6 +33,7 @@ const validationSchema = yup.object({
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",

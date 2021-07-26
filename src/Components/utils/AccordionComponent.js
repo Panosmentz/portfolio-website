@@ -6,8 +6,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
-  root: {},
+const useStyles = makeStyles(() => ({
   bachelor: {
     fontFamily: "Source Code Pro",
     fontSize: "1.2rem",
@@ -44,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 export default function AccordionComponent() {
   const classes = useStyles();
   return (
-    <Accordion className={classes.root}>
+    <Accordion>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="education-content"

@@ -4,9 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import Footer from "./Footer";
 import Typography from "@material-ui/core/Typography";
 import ProjectsImage from "../assets/projects.svg";
-import Divider from "@material-ui/core/Divider";
 import SaveIcon from "@material-ui/icons/Save";
-import me2 from "../assets/me2.jpg";
+import Me from "../assets/me.jpg";
 import SkillsComponent from "./utils/SkillsComponent";
 import TimelineComponent from "./utils/TimelineComponent";
 import AccordionComponent from "./utils/AccordionComponent";
@@ -14,7 +13,7 @@ import { Button } from "@material-ui/core";
 import HashLoader from "react-spinners/HashLoader";
 import "@fontsource/source-code-pro";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     minHeight: "100vh",
     width: "100%",
@@ -75,8 +74,6 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Source Code Pro",
     fontSize: "1.2rem",
   },
-
-  //style={{ objectFit: "cover" }}
 }));
 
 export default function About() {
@@ -109,9 +106,10 @@ export default function About() {
             <Grid item xs={12}>
               <img
                 className={classes.img}
-                src={me2}
+                src={Me}
                 width="150"
                 height="150"
+                alt="avatar"
               ></img>
             </Grid>
             <Grid item xs={12} className={classes.name}>
@@ -132,7 +130,7 @@ export default function About() {
                 gutterBottom
                 align="center"
               >
-                Software Engineer
+                Full-Stack Developer
               </Typography>
               <Typography
                 className={classes.typography}
@@ -173,12 +171,12 @@ export default function About() {
               >
                 A dynamic, hands-on, detail-oriented and highly analytical IT
                 Professional with experience in service delivery, looking for a
-                career transition as a Software Engineer. Proven ability in
+                career transition as a Full-Stack developer. Proven ability in
                 building smooth and responsive UI, fast, secure and scalable Web
                 Applications. Experience with technologies such as HTML5, CSS,
-                JavaScript, React, node.JS, RESTful APIs, Git, and much more.
-                Knowledge of deployment on various web services. Continuous
-                learner that keeps up on with new technologies and trends.
+                JavaScript, React, Node.JS, RESTful APIs, Git, and much more.
+                Continuous and quick learner that keeps up with new technologies
+                and trends.
               </Typography>
             </Grid>
 

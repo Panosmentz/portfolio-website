@@ -1,14 +1,4 @@
-import React, {
-  Suspense,
-  useCallback,
-  useRef,
-  useMemo,
-  useState,
-  useEffect,
-} from "react";
-import * as THREE from "three";
-import { Canvas, useFrame } from "react-three-fiber";
-import Effects from "./utils/Effects";
+import React, { useState, useEffect } from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -159,10 +149,11 @@ function Home2() {
                 display="inline"
                 variant="h4"
               >
-                I hold a BSc in Computer Science, currently working as a Senior
-                IT Support Engineer in Dublin. I am looking to make a career
-                transition to a Software Engineering role as I've been building
-                Full-Stack web applications while learning new technologies.
+                I hold a BSc in Computer Science and I am currently working as a
+                Senior IT Support Engineer in Dublin. I am pursuing a career
+                transition to a Full-Stack Developer role as I have been
+                learning new technologies and building Web Applications while
+                working full-time.
               </Typography>
             </motion.div>
           </Grid>

@@ -12,7 +12,7 @@ import { useHistory } from "react-router-dom";
 import Drawer from "@material-ui/core/Drawer";
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
-import logo2 from "../assets/logo2.png";
+import logo from "../assets/logo.png";
 import "@fontsource/source-code-pro";
 import "@fontsource/source-code-pro/400.css";
 
@@ -116,7 +116,7 @@ function Navbar() {
         <Toolbar classes={classes.appBarWrapper}>
           <Typography variant="h6" className={classes.title}>
             <Button onClick={() => history.push("/")} className={classes.logo}>
-              <img src={logo2} alt="Pmentzdev logo" />
+              <img src={logo} alt="Pmentzdev logo" />
             </Button>
           </Typography>
 

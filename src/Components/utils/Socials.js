@@ -1,5 +1,5 @@
 import React from "react";
-import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Fab from "@material-ui/core/Fab";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import InstagramIcon from "@material-ui/icons/Instagram";

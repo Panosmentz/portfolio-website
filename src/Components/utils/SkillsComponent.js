@@ -54,10 +54,7 @@ import { Typography } from "@material-ui/core";
 import "@fontsource/source-code-pro";
 import "@fontsource/source-code-pro/400.css";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    // textAlign: "center",
-  },
+const useStyles = makeStyles(() => ({
   chip: {
     marginTop: "10px",
     marginLeft: "15px",
@@ -66,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "15px",
     "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
     fontFamily: "Source Code Pro",
-    fontSize: "1rem",
+
     fontWeight: "bold",
   },
   avatar: {
@@ -83,13 +80,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SkillsComponent() {
   const classes = useStyles();
   return (
-    <Grid
-      container
-      direction="row"
-      alignItems="center"
-      justify="center"
-      className={classes.root}
-    >
+    <Grid container direction="row" alignItems="center" justify="center">
       <Grid item xs={12}>
         <Typography
           className={classes.typography}
