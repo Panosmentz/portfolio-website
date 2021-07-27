@@ -12,6 +12,7 @@ import AccordionComponent from "./utils/AccordionComponent";
 import { Button } from "@material-ui/core";
 import HashLoader from "react-spinners/HashLoader";
 import "@fontsource/source-code-pro";
+import FadeInWhenVisible from "./utils/FadeInWhenVisible";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -77,6 +78,34 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default function About() {
+  // const { ref, inView } = useInView({
+  //   // threshold: 0.2,
+  // });
+  //
+  // const controls = useAnimation();
+  // useEffect(() => {
+  //   if (inView) {
+  //     controls.start("visible");
+  //   }
+  //   if (!inView) {
+  //     controls.start("hidden");
+  //   }
+  // }, [controls, inView]);
+
+  //<motion.div
+  //ref={ref}
+  //initial="hidden"
+  //animate={controls}
+  //variants={{
+  //  hidden: { scale: 0 },
+  //  visible: {
+  //    scale: 1,
+  //    transition: {
+  //      duration: 1,
+  //    },
+  //  },
+  //}}
+
   const classes = useStyles();
   //loader
   const [loading, setLoading] = useState(false);
@@ -104,52 +133,56 @@ export default function About() {
             className={classes.root}
           >
             <Grid item xs={12}>
-              <img
-                className={classes.img}
-                src={Me}
-                width="150"
-                height="150"
-                alt="avatar"
-              ></img>
+              <div>
+                <img
+                  className={classes.img}
+                  src={Me}
+                  width="150"
+                  height="150"
+                  alt="avatar"
+                ></img>
+              </div>
             </Grid>
             <Grid item xs={12} className={classes.name}>
-              <Typography
-                className={classes.typography}
-                variant="h4"
-                component="h1"
-                gutterBottom
-                align="center"
-              >
-                Panagiotis Mentzelopoulos
-              </Typography>
+              <FadeInWhenVisible>
+                <Typography
+                  className={classes.typography}
+                  variant="h4"
+                  component="h1"
+                  gutterBottom
+                  align="center"
+                >
+                  Panagiotis Mentzelopoulos
+                </Typography>
 
-              <Typography
-                className={classes.typography}
-                variant="h6"
-                component="h1"
-                gutterBottom
-                align="center"
-              >
-                Full-Stack Developer
-              </Typography>
-              <Typography
-                className={classes.typography}
-                variant="h6"
-                component="h1"
-                gutterBottom
-                align="center"
-              >
-                Email: pmentzdev@outlook.com
-              </Typography>
-              <Typography
-                className={classes.typography}
-                variant="h6"
-                component="h1"
-                gutterBottom
-                align="center"
-              >
-                Tel.: +353 83 391 7092
-              </Typography>
+                <Typography
+                  className={classes.typography}
+                  variant="h6"
+                  component="h1"
+                  gutterBottom
+                  align="center"
+                >
+                  Full-Stack Developer
+                </Typography>
+                <Typography
+                  className={classes.typography}
+                  variant="h6"
+                  component="h1"
+                  gutterBottom
+                  align="center"
+                >
+                  Email: pmentzdev@outlook.com
+                </Typography>
+                <Typography
+                  className={classes.typography}
+                  variant="h6"
+                  component="h1"
+                  gutterBottom
+                  align="center"
+                >
+                  Tel.: +353 83 391 7092
+                </Typography>
+              </FadeInWhenVisible>
             </Grid>
             <Grid item xs={12} md={6} className={classes.profile}>
               <Typography
@@ -162,22 +195,24 @@ export default function About() {
               >
                 Profile
               </Typography>
-              <Typography
-                className={classes.typography}
-                variant="h6"
-                component="h1"
-                gutterBottom
-                align="center"
-              >
-                A dynamic, hands-on, detail-oriented and highly analytical IT
-                Professional with experience in service delivery, looking for a
-                career transition as a Full-Stack developer. Proven ability in
-                building smooth and responsive UI, fast, secure and scalable Web
-                Applications. Experience with technologies such as HTML5, CSS,
-                JavaScript, React, Node.JS, RESTful APIs, Git, and much more.
-                Continuous and quick learner that keeps up with new technologies
-                and trends.
-              </Typography>
+              <FadeInWhenVisible>
+                <Typography
+                  className={classes.typography}
+                  variant="h6"
+                  component="h1"
+                  gutterBottom
+                  align="center"
+                >
+                  A dynamic, hands-on, detail-oriented and highly analytical IT
+                  Professional with experience in service delivery, looking for
+                  a career transition as a Full-Stack developer. Proven ability
+                  in building smooth and responsive UI, fast, secure and
+                  scalable Web Applications. Experience with technologies such
+                  as HTML5, CSS, JavaScript, React, Node.JS, RESTful APIs, Git,
+                  and much more. Continuous and quick learner that keeps up with
+                  new technologies and trends.
+                </Typography>
+              </FadeInWhenVisible>
             </Grid>
 
             <Grid item xs={12} md={6} className={classes.skill}>
@@ -191,6 +226,7 @@ export default function About() {
               >
                 Skills
               </Typography>
+
               <SkillsComponent />
             </Grid>
 
@@ -205,7 +241,9 @@ export default function About() {
               >
                 Experience
               </Typography>
-              <TimelineComponent />
+              <FadeInWhenVisible>
+                <TimelineComponent />
+              </FadeInWhenVisible>
             </Grid>
 
             <Grid item xs={12} md={6} className={classes.education}>
@@ -219,7 +257,9 @@ export default function About() {
               >
                 Education
               </Typography>
-              <AccordionComponent />
+              <FadeInWhenVisible>
+                <AccordionComponent />
+              </FadeInWhenVisible>
             </Grid>
 
             <Grid item xs={12}>

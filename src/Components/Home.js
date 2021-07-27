@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "100vh",
     width: "100%",
     backgroundColor: "black",
+    textAlign: "center",
   },
   particle: {
     position: "fixed",
@@ -125,7 +126,7 @@ function Home2() {
                 I'm Panagiotis Mentzelopoulos,
                 <Typewriter
                   options={{
-                    strings: ["An IT Professional", "A Full-Stack developer"],
+                    strings: ["An IT Professional", "A Full-Stack Developer"],
                     autoStart: true,
                     loop: true,
                   }}

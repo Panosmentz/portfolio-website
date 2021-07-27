@@ -54,6 +54,8 @@ import { Typography } from "@material-ui/core";
 import "@fontsource/source-code-pro";
 import "@fontsource/source-code-pro/400.css";
 
+import FadeInWhenVisible from "./FadeInWhenVisible";
+
 const useStyles = makeStyles(() => ({
   chip: {
     marginTop: "10px",
@@ -82,641 +84,667 @@ export default function SkillsComponent() {
   return (
     <Grid container direction="row" alignItems="center" justify="center">
       <Grid item xs={12}>
-        <Typography
-          className={classes.typography}
-          style={{ textDecoration: "underline" }}
-        >
-          Web Technologies
-        </Typography>
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <HTMLIcon />
-            </Avatar>
-          }
-          label="HTML5"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <CssIcon />
-            </Avatar>
-          }
-          label="CSS3"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <JavascriptIcon />
-            </Avatar>
-          }
-          label="JavaScript"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <ReactJSIcon />
-            </Avatar>
-          }
-          label="React JS"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <NodeJSIcon />
-            </Avatar>
-          }
-          label="Node.JS"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <ExpressIcon />
-            </Avatar>
-          }
-          label="Express.JS"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <JQueryIcon />
-            </Avatar>
-          }
-          label="jQuery"
-        />
-      </Grid>
-      <Grid item xs={12}>
-        <Typography
-          className={classes.typography}
-          style={{ textDecoration: "underline" }}
-        >
-          Web tools
-        </Typography>
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <FirebaseIcon />
-            </Avatar>
-          }
-          label="Firebase"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <RESTAPIIcon />
-            </Avatar>
-          }
-          label="REST APIs"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <MaterialUIIcon />
-            </Avatar>
-          }
-          label="Material UI"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <BootstrapIcon />
-            </Avatar>
-          }
-          label="Bootstrap"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <AxiosIcon />
-            </Avatar>
-          }
-          label="Axios"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <JSONIcon />
-            </Avatar>
-          }
-          label="JSON"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <NPMIcon />
-            </Avatar>
-          }
-          label="NPM"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <AJAXIcon />
-            </Avatar>
-          }
-          label="AJAX"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <LambdaIcon />
-            </Avatar>
-          }
-          label="Lambda Functions"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <BcryptIcon />
-            </Avatar>
-          }
-          label="Bcrypt"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <JWTIcon />
-            </Avatar>
-          }
-          label="JSONWebToken"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <PassportIcon />
-            </Avatar>
-          }
-          label="Passport.JS"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <FormikIcon />
-            </Avatar>
-          }
-          label="Formik"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <EmailJSIcon />
-            </Avatar>
-          }
-          label="Email.JS"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <FramerMotionIcon />
-            </Avatar>
-          }
-          label="Framer Motion"
-        />
-      </Grid>
-      <Grid item xs={12}>
-        <Typography
-          className={classes.typography}
-          style={{ textDecoration: "underline" }}
-        >
-          Databases
-        </Typography>
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <FirestoreIcon />
-            </Avatar>
-          }
-          label="Firebase Firestore"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <MySQLIcon />
-            </Avatar>
-          }
-          label="MySQL"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <MongoDBIcon />
-            </Avatar>
-          }
-          label="MongoDB"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <MongooseIcon />
-            </Avatar>
-          }
-          label="Mongooose"
-        />
-      </Grid>
-      <Grid item xs={12}>
-        <Typography
-          className={classes.typography}
-          style={{ textDecoration: "underline" }}
-        >
-          Testing
-        </Typography>
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <JestIcon />
-            </Avatar>
-          }
-          label="Jest"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <EnzymeIcon />
-            </Avatar>
-          }
-          label="Enzyme"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <TestcafeIcon />
-            </Avatar>
-          }
-          label="Testcafe"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <CypressIcon />
-            </Avatar>
-          }
-          label="Cypress"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <NightwatchIcon />
-            </Avatar>
-          }
-          label="Nightwatch"
-        />
-      </Grid>
-      <Grid item xs={12}>
-        <Typography
-          className={classes.typography}
-          style={{ textDecoration: "underline" }}
-        >
-          Tools
-        </Typography>
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <PostmanIcon />
-            </Avatar>
-          }
-          label="Postman"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <VSCodeIcon />
-            </Avatar>
-          }
-          label="VS Code"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <FigmaIcon />
-            </Avatar>
-          }
-          label="Figma"
-        />
-      </Grid>
-      <Grid item xs={12}>
-        <Typography
-          className={classes.typography}
-          style={{ textDecoration: "underline" }}
-        >
-          Version Control
-        </Typography>
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <GitIcon />
-            </Avatar>
-          }
-          label="Git"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <GithubIcon />
-            </Avatar>
-          }
-          label="Github"
-        />
+        <FadeInWhenVisible>
+          <Typography
+            className={classes.typography}
+            style={{ textDecoration: "underline" }}
+          >
+            Web Technologies
+          </Typography>
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <HTMLIcon />
+              </Avatar>
+            }
+            label="HTML5"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <CssIcon />
+              </Avatar>
+            }
+            label="CSS3"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <JavascriptIcon />
+              </Avatar>
+            }
+            label="JavaScript"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <ReactJSIcon />
+              </Avatar>
+            }
+            label="React JS"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <NodeJSIcon />
+              </Avatar>
+            }
+            label="Node.JS"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <ExpressIcon />
+              </Avatar>
+            }
+            label="Express.JS"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <JQueryIcon />
+              </Avatar>
+            }
+            label="jQuery"
+          />
+        </FadeInWhenVisible>
       </Grid>
 
       <Grid item xs={12}>
-        <Typography
-          className={classes.typography}
-          style={{ textDecoration: "underline" }}
-        >
-          Deployment
-        </Typography>
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <HerokuIcon />
-            </Avatar>
-          }
-          label="Heroku"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <NetlifyIcon />
-            </Avatar>
-          }
-          label="Netlify"
-        />
+        <FadeInWhenVisible>
+          <Typography
+            className={classes.typography}
+            style={{ textDecoration: "underline" }}
+          >
+            Web tools
+          </Typography>
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <FirebaseIcon />
+              </Avatar>
+            }
+            label="Firebase"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <RESTAPIIcon />
+              </Avatar>
+            }
+            label="REST APIs"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <MaterialUIIcon />
+              </Avatar>
+            }
+            label="Material UI"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <BootstrapIcon />
+              </Avatar>
+            }
+            label="Bootstrap"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <AxiosIcon />
+              </Avatar>
+            }
+            label="Axios"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <JSONIcon />
+              </Avatar>
+            }
+            label="JSON"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <NPMIcon />
+              </Avatar>
+            }
+            label="NPM"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <AJAXIcon />
+              </Avatar>
+            }
+            label="AJAX"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <LambdaIcon />
+              </Avatar>
+            }
+            label="Lambda Functions"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <BcryptIcon />
+              </Avatar>
+            }
+            label="Bcrypt"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <JWTIcon />
+              </Avatar>
+            }
+            label="JSONWebToken"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <PassportIcon />
+              </Avatar>
+            }
+            label="Passport.JS"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <FormikIcon />
+              </Avatar>
+            }
+            label="Formik"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <EmailJSIcon />
+              </Avatar>
+            }
+            label="Email.JS"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <FramerMotionIcon />
+              </Avatar>
+            }
+            label="Framer Motion"
+          />
+        </FadeInWhenVisible>
       </Grid>
+
       <Grid item xs={12}>
-        <Typography
-          className={classes.typography}
-          style={{ textDecoration: "underline" }}
-        >
-          System Administration
-        </Typography>
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <WindowsServer2012Icon />
-            </Avatar>
-          }
-          label="Windows Server 2012"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <ActiveDirectoryIcon />
-            </Avatar>
-          }
-          label="Windows Active Directory"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <Office365Icon />
-            </Avatar>
-          }
-          label="Office 365 Admin Center"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <ExchangeIcon />
-            </Avatar>
-          }
-          label="Microsoft Exchange"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <LinuxIcon />
-            </Avatar>
-          }
-          label="Linux"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <SCCMIcon />
-            </Avatar>
-          }
-          label="SCCM"
-        />
+        <FadeInWhenVisible>
+          <Typography
+            className={classes.typography}
+            style={{ textDecoration: "underline" }}
+          >
+            Databases
+          </Typography>
+
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <FirestoreIcon />
+              </Avatar>
+            }
+            label="Firebase Firestore"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <MySQLIcon />
+              </Avatar>
+            }
+            label="MySQL"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <MongoDBIcon />
+              </Avatar>
+            }
+            label="MongoDB"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <MongooseIcon />
+              </Avatar>
+            }
+            label="Mongooose"
+          />
+        </FadeInWhenVisible>
       </Grid>
+
       <Grid item xs={12}>
-        <Typography
-          className={classes.typography}
-          style={{ textDecoration: "underline" }}
-        >
-          Other
-        </Typography>
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <PowerShellIcon />
-            </Avatar>
-          }
-          label="PowerShell"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <CIcon />
-            </Avatar>
-          }
-          label="C"
-        />
-        <Chip
-          className={classes.chip}
-          avatar={
-            <Avatar
-              className={classes.avatar}
-              style={{ height: "30px", width: "30px" }}
-            >
-              <JavaIcon />
-            </Avatar>
-          }
-          label="Java"
-        />
+        <FadeInWhenVisible>
+          <Typography
+            className={classes.typography}
+            style={{ textDecoration: "underline" }}
+          >
+            Testing
+          </Typography>
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <JestIcon />
+              </Avatar>
+            }
+            label="Jest"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <EnzymeIcon />
+              </Avatar>
+            }
+            label="Enzyme"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <TestcafeIcon />
+              </Avatar>
+            }
+            label="Testcafe"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <CypressIcon />
+              </Avatar>
+            }
+            label="Cypress"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <NightwatchIcon />
+              </Avatar>
+            }
+            label="Nightwatch"
+          />
+        </FadeInWhenVisible>
+      </Grid>
+
+      <Grid item xs={12}>
+        <FadeInWhenVisible>
+          <Typography
+            className={classes.typography}
+            style={{ textDecoration: "underline" }}
+          >
+            Tools
+          </Typography>
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <PostmanIcon />
+              </Avatar>
+            }
+            label="Postman"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <VSCodeIcon />
+              </Avatar>
+            }
+            label="VS Code"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <FigmaIcon />
+              </Avatar>
+            }
+            label="Figma"
+          />
+        </FadeInWhenVisible>
+      </Grid>
+
+      <Grid item xs={12}>
+        <FadeInWhenVisible>
+          <Typography
+            className={classes.typography}
+            style={{ textDecoration: "underline" }}
+          >
+            Version Control
+          </Typography>
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <GitIcon />
+              </Avatar>
+            }
+            label="Git"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <GithubIcon />
+              </Avatar>
+            }
+            label="Github"
+          />
+        </FadeInWhenVisible>
+      </Grid>
+
+      <Grid item xs={12}>
+        <FadeInWhenVisible>
+          <Typography
+            className={classes.typography}
+            style={{ textDecoration: "underline" }}
+          >
+            Deployment
+          </Typography>
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <HerokuIcon />
+              </Avatar>
+            }
+            label="Heroku"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <NetlifyIcon />
+              </Avatar>
+            }
+            label="Netlify"
+          />
+        </FadeInWhenVisible>
+      </Grid>
+
+      <Grid item xs={12}>
+        <FadeInWhenVisible>
+          <Typography
+            className={classes.typography}
+            style={{ textDecoration: "underline" }}
+          >
+            System Administration
+          </Typography>
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <WindowsServer2012Icon />
+              </Avatar>
+            }
+            label="Windows Server 2012"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <ActiveDirectoryIcon />
+              </Avatar>
+            }
+            label="Windows Active Directory"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <Office365Icon />
+              </Avatar>
+            }
+            label="Office 365 Admin Center"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <ExchangeIcon />
+              </Avatar>
+            }
+            label="Microsoft Exchange"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <LinuxIcon />
+              </Avatar>
+            }
+            label="Linux"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <SCCMIcon />
+              </Avatar>
+            }
+            label="SCCM"
+          />
+        </FadeInWhenVisible>
+      </Grid>
+
+      <Grid item xs={12}>
+        <FadeInWhenVisible>
+          <Typography
+            className={classes.typography}
+            style={{ textDecoration: "underline" }}
+          >
+            Other
+          </Typography>
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <PowerShellIcon />
+              </Avatar>
+            }
+            label="PowerShell"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <CIcon />
+              </Avatar>
+            }
+            label="C"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <JavaIcon />
+              </Avatar>
+            }
+            label="Java"
+          />
+        </FadeInWhenVisible>
       </Grid>
     </Grid>
   );
