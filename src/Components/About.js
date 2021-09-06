@@ -266,7 +266,7 @@ export default function About() {
               <Button
                 className={classes.button}
                 variant="contained"
-                href="https://store8.gofile.io/download/jwxmtE/18367d2ac00f8555651aec28eda406da/CV%20Panagiotis%20Mentzelopoulos%20Front%20End%20Developer.pdf"
+                href="https://drive.google.com/uc?export=download&id=1LSqvygo5SDLAZfcgr_XDP8gNSHqGMuRv"
                 target="_blank"
                 startIcon={<SaveIcon />}
               >

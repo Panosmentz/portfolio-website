@@ -137,7 +137,7 @@ export default function SkillsComponent() {
                 <ReactJSIcon />
               </Avatar>
             }
-            label="React JS"
+            label="React"
           />
           <Chip
             className={classes.chip}
