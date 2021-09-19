@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
+    justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "black",
   },

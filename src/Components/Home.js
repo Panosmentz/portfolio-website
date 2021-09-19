@@ -13,6 +13,9 @@ import Particle from "./utils/Particles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
     minHeight: "100vh",
     width: "100%",
     backgroundColor: "black",
@@ -50,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
   typography: {
     fontFamily: "Source Code Pro",
-    fontSize: "2.2rem",
+    fontSize: "1.4rem",
   },
   button: {
     marginTop: 100,
@@ -65,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Home2() {
+function Home() {
   //loader
   const [loading, setLoading] = useState(false);
 
@@ -126,7 +129,13 @@ function Home2() {
                 I'm Panagiotis Mentzelopoulos,
                 <Typewriter
                   options={{
-                    strings: ["An IT Professional", "A Full-Stack Developer"],
+                    strings: [
+                      "An IT Professional",
+                      "Software Engineer",
+                      "Full-Stack Developer",
+                      "Front End Developer",
+                      "Back End Developer",
+                    ],
                     autoStart: true,
                     loop: true,
                   }}
@@ -150,11 +159,15 @@ function Home2() {
                 display="inline"
                 variant="h4"
               >
-                I hold a BSc in Computer Science and I am currently working as a
-                Senior IT Support Engineer in Dublin. I am pursuing a career
-                transition to a Full-Stack Developer role as I have been
-                learning new technologies and building Web Applications while
-                working full-time.
+                Highly self-motivated and goal-oriented IT professional
+                committed to pursuing a career change in Software Engineering.
+                Offers a 2-year track record demonstrating strong analytical and
+                problem-solving skills, leadership, mentoring and providing
+                solutions as a Senior IT Support Engineer. Proven ability in
+                building scalable and secure full stack applications featuring
+                technologies such as HTML, CSS, JavaScript, React, NodeJS,
+                RESTful APIs, Material UI and Git. Continuous and quick learner
+                that keeps up with new technologies and trends.
               </Typography>
             </motion.div>
           </Grid>
@@ -173,4 +186,4 @@ function Home2() {
   );
 }
 
-export default Home2;
+export default Home;

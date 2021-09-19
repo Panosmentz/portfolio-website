@@ -16,6 +16,9 @@ import FadeInWhenVisible from "./utils/FadeInWhenVisible";
 
 const useStyles = makeStyles(() => ({
   root: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
     minHeight: "100vh",
     width: "100%",
   },
@@ -37,6 +40,7 @@ const useStyles = makeStyles(() => ({
     alignItems: "center",
   },
   typography: {
+    marginTop: "10px",
     fontFamily: "Source Code Pro",
     fontSize: "1.1rem",
     fontWeight: "bold",
@@ -45,6 +49,7 @@ const useStyles = makeStyles(() => ({
     fontFamily: "Source Code Pro",
     fontSize: "1.8rem",
     fontWeight: "bold",
+    textDecoration: "underline",
     marginTop: "50px",
   },
 
@@ -78,34 +83,6 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default function About() {
-  // const { ref, inView } = useInView({
-  //   // threshold: 0.2,
-  // });
-  //
-  // const controls = useAnimation();
-  // useEffect(() => {
-  //   if (inView) {
-  //     controls.start("visible");
-  //   }
-  //   if (!inView) {
-  //     controls.start("hidden");
-  //   }
-  // }, [controls, inView]);
-
-  //<motion.div
-  //ref={ref}
-  //initial="hidden"
-  //animate={controls}
-  //variants={{
-  //  hidden: { scale: 0 },
-  //  visible: {
-  //    scale: 1,
-  //    transition: {
-  //      duration: 1,
-  //    },
-  //  },
-  //}}
-
   const classes = useStyles();
   //loader
   const [loading, setLoading] = useState(false);
@@ -162,7 +139,7 @@ export default function About() {
                   gutterBottom
                   align="center"
                 >
-                  Full-Stack Developer
+                  Software Engineer
                 </Typography>
                 <Typography
                   className={classes.typography}
@@ -171,7 +148,10 @@ export default function About() {
                   gutterBottom
                   align="center"
                 >
-                  Email: pmentzdev@outlook.com
+                  Email:
+                  <a href="mailto:pmentzdev@outlook.com" target="_top">
+                    pmentzdev@outlook.com
+                  </a>
                 </Typography>
                 <Typography
                   className={classes.typography}
@@ -180,7 +160,7 @@ export default function About() {
                   gutterBottom
                   align="center"
                 >
-                  Tel.: +353 83 391 7092
+                  Mobile: +353 83 391 7092
                 </Typography>
               </FadeInWhenVisible>
             </Grid>
@@ -191,7 +171,7 @@ export default function About() {
                 component="h1"
                 gutterBottom
                 align="center"
-                style={{ color: "#7f10a1" }}
+                style={{ color: "#290036" }}
               >
                 Profile
               </Typography>
@@ -204,9 +184,8 @@ export default function About() {
                   align="center"
                 >
                   A dynamic, hands-on, detail-oriented and highly analytical IT
-                  Professional with experience in service delivery, looking for
-                  a career transition as a Full-Stack developer. Proven ability
-                  in building smooth and responsive UI, fast, secure and
+                  Professional with experience in service delivery. Proven
+                  ability in building smooth and responsive UI, fast, secure and
                   scalable Web Applications. Experience with technologies such
                   as HTML5, CSS, JavaScript, React, Node.JS, RESTful APIs, Git,
                   and much more. Continuous and quick learner that keeps up with
@@ -222,7 +201,7 @@ export default function About() {
                 component="h1"
                 gutterBottom
                 align="center"
-                style={{ color: "#7f10a1" }}
+                style={{ color: "#290036" }}
               >
                 Skills
               </Typography>
@@ -237,7 +216,7 @@ export default function About() {
                 component="h1"
                 gutterBottom
                 align="center"
-                style={{ color: "#7f10a1" }}
+                style={{ color: "#290036" }}
               >
                 Experience
               </Typography>
@@ -253,7 +232,7 @@ export default function About() {
                 component="h1"
                 gutterBottom
                 align="center"
-                style={{ color: "#7f10a1" }}
+                style={{ color: "#290036" }}
               >
                 Education
               </Typography>
@@ -266,7 +245,7 @@ export default function About() {
               <Button
                 className={classes.button}
                 variant="contained"
-                href="https://drive.google.com/uc?export=download&id=1LSqvygo5SDLAZfcgr_XDP8gNSHqGMuRv"
+                href="https://drive.google.com/uc?export=download&id=1Fy7TBHyE64rtZACX3AYkIqCdQnN1zTAD"
                 target="_blank"
                 startIcon={<SaveIcon />}
               >

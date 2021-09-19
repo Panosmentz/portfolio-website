@@ -57,6 +57,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
     width: "100%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   loader: {
     backgroundColor: "black",
