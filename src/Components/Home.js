@@ -159,15 +159,15 @@ function Home() {
                 display="inline"
                 variant="h4"
               >
-                Highly self-motivated and goal-oriented IT professional
-                committed to pursuing a career change in Software Engineering.
-                Offers a 2-year track record demonstrating strong analytical and
-                problem-solving skills, leadership, mentoring and providing
-                solutions as a Senior IT Support Engineer. Proven ability in
-                building scalable and secure full stack applications featuring
-                technologies such as HTML, CSS, JavaScript, React, NodeJS,
-                RESTful APIs, Material UI and Git. Continuous and quick learner
-                that keeps up with new technologies and trends.
+                Highly self-motivated and goal-oriented IT professional aspiring
+                to transition to a Software Engineering role. Offers a 2-year
+                track record demonstrating strong analytical and problem-solving
+                skills, leadership, mentoring and providing solutions as a
+                Senior IT Support Engineer. Proven ability in building scalable
+                and secure full stack applications featuring technologies such
+                as HTML, CSS, JavaScript, React, NodeJS, RESTful APIs, Material
+                UI and Git. Continuous and quick learner that keeps up with new
+                technologies and trends.
               </Typography>
             </motion.div>
           </Grid>

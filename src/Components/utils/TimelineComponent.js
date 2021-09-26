@@ -54,11 +54,11 @@ export default function TimelineComponent() {
           <TimelineContent>
             <Paper elevation={5} className={classes.paperstyle}>
               <Typography className={classes.date}>
-                March 2018 - September 2018
+                September 2020 - present
               </Typography>
               <Typography className={classes.job}>
-                Internship - IT Support Engineer @ Dixons South-East Europe -
-                Athens, Greece
+                Senior IT Support Engineer @Evros Technology Group - Dublin,
+                Ireland
               </Typography>
             </Paper>
           </TimelineContent>
@@ -79,6 +79,7 @@ export default function TimelineComponent() {
             </Paper>
           </TimelineContent>
         </TimelineItem>
+
         <TimelineItem>
           <TimelineSeparator>
             <TimelineDot className={classes.dot} />
@@ -87,11 +88,11 @@ export default function TimelineComponent() {
           <TimelineContent>
             <Paper elevation={5} className={classes.paperstyle}>
               <Typography className={classes.date}>
-                September 2020 - present
+                March 2018 - September 2018
               </Typography>
               <Typography className={classes.job}>
-                Senior IT Support Engineer @Evros Technology Group - Dublin,
-                Ireland
+                Internship - IT Support Engineer @ Dixons South-East Europe -
+                Athens, Greece
               </Typography>
             </Paper>
           </TimelineContent>

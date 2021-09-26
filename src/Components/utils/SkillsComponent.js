@@ -553,7 +553,7 @@ export default function SkillsComponent() {
             className={classes.typography}
             style={{ textDecoration: "underline" }}
           >
-            Version Control
+            DevOps
           </Typography>
           <Chip
             className={classes.chip}
@@ -579,17 +579,6 @@ export default function SkillsComponent() {
             }
             label="Github"
           />
-        </FadeInWhenVisible>
-      </Grid>
-
-      <Grid item xs={12}>
-        <FadeInWhenVisible>
-          <Typography
-            className={classes.typography}
-            style={{ textDecoration: "underline" }}
-          >
-            Deployment
-          </Typography>
           <Chip
             className={classes.chip}
             avatar={
@@ -613,6 +602,18 @@ export default function SkillsComponent() {
               </Avatar>
             }
             label="Netlify"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <HerokuIcon />
+              </Avatar>
+            }
+            label="CI/CD on Heroku"
           />
         </FadeInWhenVisible>
       </Grid>
