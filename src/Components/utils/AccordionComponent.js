@@ -2,7 +2,6 @@ import React from "react";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -43,12 +42,8 @@ const useStyles = makeStyles(() => ({
 export default function AccordionComponent() {
   const classes = useStyles();
   return (
-    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="education-content"
-        id="education-header"
-      >
+    <Accordion expanded={true}>
+      <AccordionSummary aria-controls="education-content" id="education-header">
         <Typography className={classes.bachelor}>
           University of West Attica / BSc in Computer Systems Engineering
         </Typography>

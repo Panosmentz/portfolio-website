@@ -13,7 +13,7 @@ function Copyright() {
   return (
     <Typography variant="body2" className={classes.typography}>
       {"Designed and Developed by Panagiotis Mentzelopoulos  © "}
-      <Link color="inherit" href="https://pmentz.io/">
+      <Link color="inherit" href="https://pmentz.com/">
         pmentz Dev.
       </Link>{" "}
       {new Date().getFullYear()}

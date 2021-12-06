@@ -25,6 +25,7 @@ import expenses from "../assets/savings.svg";
 import recipes from "../assets/recipe.jpg";
 import weather from "../assets/weather-icon.png";
 import auctions from "../assets/auction.jpg";
+import blog from "../assets/blog.jpg";
 import { ReactComponent as MaterialUIIcon } from "../assets/tech icons/material-ui.svg";
 import { ReactComponent as ReactJSIcon } from "../assets/tech icons/react.svg";
 import { ReactComponent as FirebaseIcon } from "../assets/tech icons/firebase.svg";
@@ -49,6 +50,10 @@ import { ReactComponent as MongoDBIcon } from "../assets/tech icons/mongodb.svg"
 import { ReactComponent as MongooseIcon } from "../assets/tech icons/mongoose.svg";
 import { ReactComponent as NodeJSIcon } from "../assets/tech icons/nodejs-icon.svg";
 import { ReactComponent as PassportIcon } from "../assets/tech icons/passport.svg";
+import { ReactComponent as GraphQLIcon } from "../assets/tech icons/graphql.svg";
+import { ReactComponent as TailwindIcon } from "../assets/tech icons/tailwind.svg";
+import { ReactComponent as NextJSIcon } from "../assets/tech icons/nextjs.svg";
+import { ReactComponent as GraphCMSIcon } from "../assets/tech icons/graphcms.svg";
 import HashLoader from "react-spinners/HashLoader";
 import "@fontsource/source-code-pro";
 import FadeInWhenVisible from "./utils/FadeInWhenVisible";
@@ -59,7 +64,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
   },
   loader: {
     backgroundColor: "black",
@@ -87,6 +91,11 @@ const useStyles = makeStyles((theme) => ({
   card: {
     maxWidth: 500,
     marginTop: "80px",
+    boxShadow:
+      "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+    "&:hover": {
+      backgroundColor: "#f5f5f5",
+    },
     "& .MuiFab-root": {
       backgroundColor: "#fff",
     },
@@ -148,6 +157,7 @@ export default function Projects() {
   const [expanded5, setExpanded5] = React.useState(false);
   const [expanded6, setExpanded6] = React.useState(false);
   const [expanded7, setExpanded7] = React.useState(false);
+  const [expanded8, setExpanded8] = React.useState(false);
 
   const handleExpandClick1 = () => {
     setExpanded1(!expanded1);
@@ -169,6 +179,9 @@ export default function Projects() {
   };
   const handleExpandClick7 = () => {
     setExpanded7(!expanded7);
+  };
+  const handleExpandClick8 = () => {
+    setExpanded8(!expanded8);
   };
 
   return (
@@ -194,6 +207,129 @@ export default function Projects() {
               Projects
             </Typography>
           </Grid>
+
+          <Grid item xs={12} md={4} align="center">
+            <FadeInWhenVisible>
+              <Card className={classes.card}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      aria-label="headshot"
+                      className={classes.avatar}
+                      src={Me}
+                    ></Avatar>
+                  }
+                  title="Crypto Blog"
+                  subheader="November 30, 2021"
+                />
+                <CardMedia
+                  className={classes.media}
+                  image={blog}
+                  title="blog"
+                />
+                <CardContent>
+                  <Typography
+                    variant="body2"
+                    component="p"
+                    className={classes.description}
+                  >
+                    A Headless CMS blog using Next JS, Tailwind CSS, GraphQL and
+                    GraphCMS. Fully customizable through GraphCMS, the project
+                    owner or delegates can add new articles, images and control
+                    the content of the blog. Also features a comments section.
+                    Deployed on Vercel.
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <a
+                    href="https://next-crypto-blog.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Fab size="small" className={classes.icons}>
+                      <VisibilityIcon />
+                    </Fab>
+                  </a>
+                  <a
+                    href="https://github.com/Panosmentz/next-crypto-blog"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Fab size="small" className={classes.icons}>
+                      <GithubIcon />
+                    </Fab>
+                  </a>
+
+                  <IconButton
+                    className={clsx(classes.expand, {
+                      [classes.expandOpen]: expanded8,
+                    })}
+                    onClick={handleExpandClick8}
+                    aria-expanded={expanded8}
+                    aria-label="show more"
+                  >
+                    <ExpandMoreIcon />
+                  </IconButton>
+                </CardActions>
+                <Collapse in={expanded8} timeout="auto" unmountOnExit>
+                  <CardContent>
+                    <Typography className={classes.description} paragraph>
+                      Technologies:
+                    </Typography>
+
+                    <Grid container direction="row" alignItems="center">
+                      <Grid item>
+                        <NextJSIcon className={classes.techicon} />
+                      </Grid>
+                      <Grid item>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Next JS
+                        </Typography>
+                      </Grid>
+                    </Grid>
+
+                    <Grid container direction="row" alignItems="center">
+                      <Grid item>
+                        <TailwindIcon className={classes.techicon} />
+                      </Grid>
+                      <Grid item>
+                        <Typography className={classes.description}>
+                          {" "}
+                          Tailwind CSS
+                        </Typography>
+                      </Grid>
+                    </Grid>
+
+                    <Grid container direction="row" alignItems="center">
+                      <Grid item>
+                        <GraphQLIcon className={classes.techicon} />
+                      </Grid>
+                      <Grid item>
+                        <Typography className={classes.description}>
+                          {" "}
+                          GraphQL
+                        </Typography>
+                      </Grid>
+                    </Grid>
+
+                    <Grid container direction="row" alignItems="center">
+                      <Grid item>
+                        <GraphCMSIcon className={classes.techicon} />
+                      </Grid>
+                      <Grid item>
+                        <Typography className={classes.description}>
+                          {" "}
+                          GraphCMS
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </Collapse>
+              </Card>
+            </FadeInWhenVisible>
+          </Grid>
+
           <Grid item xs={12} md={4} align="center">
             <FadeInWhenVisible>
               <Card className={classes.card}>
@@ -327,6 +463,7 @@ export default function Projects() {
               </Card>
             </FadeInWhenVisible>
           </Grid>
+
           <Grid item xs={12} md={4} align="center">
             <FadeInWhenVisible>
               <Card className={classes.card}>

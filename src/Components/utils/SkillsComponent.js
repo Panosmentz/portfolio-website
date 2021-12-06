@@ -50,6 +50,9 @@ import { ReactComponent as ExchangeIcon } from "../../assets/tech icons/exchange
 import { ReactComponent as LinuxIcon } from "../../assets/tech icons/linux.svg";
 import { ReactComponent as SCCMIcon } from "../../assets/tech icons/sccm.svg";
 import { ReactComponent as CIcon } from "../../assets/tech icons/c.svg";
+import { ReactComponent as GraphQLIcon } from "../../assets/tech icons/graphql.svg";
+import { ReactComponent as TailwindIcon } from "../../assets/tech icons/tailwind.svg";
+import { ReactComponent as NextJSIcon } from "../../assets/tech icons/nextjs.svg";
 import { Typography } from "@material-ui/core";
 import "@fontsource/source-code-pro";
 import "@fontsource/source-code-pro/400.css";
@@ -138,6 +141,18 @@ export default function SkillsComponent() {
               </Avatar>
             }
             label="React"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <NextJSIcon />
+              </Avatar>
+            }
+            label="Next.JS"
           />
           <Chip
             className={classes.chip}
@@ -241,10 +256,34 @@ export default function SkillsComponent() {
                 className={classes.avatar}
                 style={{ height: "30px", width: "30px" }}
               >
+                <TailwindIcon />
+              </Avatar>
+            }
+            label="Tailwind"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
                 <AxiosIcon />
               </Avatar>
             }
             label="Axios"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <GraphQLIcon />
+              </Avatar>
+            }
+            label="GraphQL"
           />
           <Chip
             className={classes.chip}
@@ -553,7 +592,7 @@ export default function SkillsComponent() {
             className={classes.typography}
             style={{ textDecoration: "underline" }}
           >
-            Version Control
+            DevOps
           </Typography>
           <Chip
             className={classes.chip}
@@ -579,17 +618,6 @@ export default function SkillsComponent() {
             }
             label="Github"
           />
-        </FadeInWhenVisible>
-      </Grid>
-
-      <Grid item xs={12}>
-        <FadeInWhenVisible>
-          <Typography
-            className={classes.typography}
-            style={{ textDecoration: "underline" }}
-          >
-            Deployment
-          </Typography>
           <Chip
             className={classes.chip}
             avatar={
@@ -613,6 +641,18 @@ export default function SkillsComponent() {
               </Avatar>
             }
             label="Netlify"
+          />
+          <Chip
+            className={classes.chip}
+            avatar={
+              <Avatar
+                className={classes.avatar}
+                style={{ height: "30px", width: "30px" }}
+              >
+                <HerokuIcon />
+              </Avatar>
+            }
+            label="CI/CD on Heroku"
           />
         </FadeInWhenVisible>
       </Grid>

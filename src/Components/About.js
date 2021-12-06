@@ -65,6 +65,10 @@ const useStyles = makeStyles(() => ({
   experience: { marginTop: "50px" },
   education: {
     marginTop: "50px",
+    boxShadow:
+      "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+    transition: "transform 0.15s ease-in-out",
+    "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
   },
   chip: {},
   avatar: {},
@@ -181,15 +185,15 @@ export default function About() {
                   variant="h6"
                   component="h1"
                   gutterBottom
-                  align="center"
+                  align="left"
                 >
-                  A dynamic, hands-on, detail-oriented and highly analytical IT
-                  Professional with experience in service delivery. Proven
-                  ability in building smooth and responsive UI, fast, secure and
-                  scalable Web Applications. Experience with technologies such
-                  as HTML5, CSS, JavaScript, React, Node.JS, RESTful APIs, Git,
-                  and much more. Continuous and quick learner that keeps up with
-                  new technologies and trends.
+                  I'm a highly self-motivated and goal-oriented IT professional
+                  aspiring to fully transition to a Software Engineering role. I
+                  have a track record of building scalable and secure full-stack
+                  web applications, mostly with the MERN Stack
+                  (MongoDB/Express/React/Node). As a continuous and quick
+                  learner I enjoy expanding my knowledge both in depth and in
+                  breadth while producing consistent tangible value.
                 </Typography>
               </FadeInWhenVisible>
             </Grid>
@@ -245,7 +249,7 @@ export default function About() {
               <Button
                 className={classes.button}
                 variant="contained"
-                href="https://drive.google.com/uc?export=download&id=1Fy7TBHyE64rtZACX3AYkIqCdQnN1zTAD"
+                href="https://drive.google.com/file/d/1F3WhE5k9eoReJ7TFJHpGievOquyDsM-J/view?usp=sharing"
                 target="_blank"
                 startIcon={<SaveIcon />}
               >

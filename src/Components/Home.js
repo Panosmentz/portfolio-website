@@ -44,14 +44,15 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
   },
   title2: {
-    marginTop: "100px",
+    marginTop: "50px",
     display: "flex",
-    justifyContent: "center",
+    alignItems: "baseline",
     fontSize: 30,
     color: "#fff",
-    textAlign: "center",
+    textAlign: "left",
   },
   typography: {
+    marginTop: 30,
     fontFamily: "Source Code Pro",
     fontSize: "1.4rem",
   },
@@ -156,18 +157,27 @@ function Home() {
             >
               <Typography
                 className={classes.typography}
-                display="inline"
                 variant="h4"
+                gutterBottom
               >
-                Highly self-motivated and goal-oriented IT professional
-                committed to pursuing a career change in Software Engineering.
-                Offers a 2-year track record demonstrating strong analytical and
-                problem-solving skills, leadership, mentoring and providing
-                solutions as a Senior IT Support Engineer. Proven ability in
-                building scalable and secure full stack applications featuring
-                technologies such as HTML, CSS, JavaScript, React, NodeJS,
-                RESTful APIs, Material UI and Git. Continuous and quick learner
-                that keeps up with new technologies and trends.
+                I'm a highly self-motivated and goal-oriented IT professional
+                aspiring to fully transition to a Software Engineering role. I
+                have a track record of building scalable and secure full-stack
+                web applications, mostly with React, Node.JS, SQL and NoSQL
+                databases, REST APIs, etc.
+              </Typography>
+
+              <Typography
+                className={classes.typography}
+                variant="h4"
+                gutterBottom
+              >
+                As a continuous and quick learner I enjoy expanding my knowledge
+                both in depth and in breadth while producing consistent tangible
+                value. Furthermore, I have repeatedly received feedback about
+                demonstrating strong analytical and problem-solving skills,
+                leading projects to completion successfully, as well as
+                mentoring colleagues effectively.
               </Typography>
             </motion.div>
           </Grid>
@@ -177,7 +187,7 @@ function Home() {
             size="large"
             href="/about"
           >
-            Learn More
+            About Me
           </Button>
           <Footer />
         </Grid>
