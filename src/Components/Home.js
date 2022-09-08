@@ -132,10 +132,8 @@ function Home() {
                   options={{
                     strings: [
                       "An IT Professional",
-                      "Software Engineer",
                       "Full-Stack Developer",
-                      "Front End Developer",
-                      "Back End Developer",
+                      "Integration Engineer",
                     ],
                     autoStart: true,
                     loop: true,
@@ -161,10 +159,11 @@ function Home() {
                 gutterBottom
               >
                 I'm a highly self-motivated and goal-oriented IT professional
-                aspiring to fully transition to a Software Engineering role. I
-                have a track record of building scalable and secure full-stack
-                web applications, mostly with React, Node.JS, SQL and NoSQL
-                databases, REST APIs, etc.
+                with experience in full-stack integrations and IT Service
+                delivery. I have a track record of building scalable and secure
+                full-stack web applications, mostly with React, Node.JS, SQL and
+                NoSQL databases, REST APIs, middlewares, headless CMS,
+                serverless functions and much more.
               </Typography>
 
               <Typography
@@ -185,7 +184,7 @@ function Home() {
             className={classes.button}
             variant="contained"
             size="large"
-            href="/about"
+            href="http://www.pmentz.com/about"
           >
             About Me
           </Button>

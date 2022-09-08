@@ -54,7 +54,24 @@ export default function TimelineComponent() {
           <TimelineContent>
             <Paper elevation={5} className={classes.paperstyle}>
               <Typography className={classes.date}>
-                October 2019 - present
+                March 2022 - present
+              </Typography>
+              <Typography className={classes.job}>
+                Integration Engineer @ PayPal - Dublin, Ireland
+              </Typography>
+            </Paper>
+          </TimelineContent>
+        </TimelineItem>
+
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot className={classes.dot} />
+            <TimelineConnector className={classes.connector} />
+          </TimelineSeparator>
+          <TimelineContent>
+            <Paper elevation={5} className={classes.paperstyle}>
+              <Typography className={classes.date}>
+                October 2019 - February 2022
               </Typography>
               <Typography className={classes.job}>
                 Senior IT Support Engineer @ eir evo - Dublin, Ireland

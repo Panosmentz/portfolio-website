@@ -188,12 +188,14 @@ export default function About() {
                   align="left"
                 >
                   I'm a highly self-motivated and goal-oriented IT professional
-                  aspiring to fully transition to a Software Engineering role. I
-                  have a track record of building scalable and secure full-stack
-                  web applications, mostly with the MERN Stack
-                  (MongoDB/Express/React/Node). As a continuous and quick
-                  learner I enjoy expanding my knowledge both in depth and in
-                  breadth while producing consistent tangible value.
+                  with experience in full-stack integrations and IT Service
+                  delivery. I have a track record of building scalable and
+                  secure full-stack web applications, mostly with React,
+                  Node.JS, SQL and NoSQL databases, REST APIs, middlewares,
+                  headless CMS, serverless functions and much more. As a
+                  continuous and quick learner I enjoy expanding my knowledge
+                  both in depth and in breadth while producing consistent
+                  tangible value.
                 </Typography>
               </FadeInWhenVisible>
             </Grid>
@@ -249,7 +251,7 @@ export default function About() {
               <Button
                 className={classes.button}
                 variant="contained"
-                href="https://drive.google.com/file/d/1F3WhE5k9eoReJ7TFJHpGievOquyDsM-J/view?usp=sharing"
+                href="https://drive.google.com/file/d/17s361vpp4jARWkm6RRs1jiNRMuxc1zwO/view?usp=sharing"
                 target="_blank"
                 startIcon={<SaveIcon />}
               >
