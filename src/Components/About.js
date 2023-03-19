@@ -235,7 +235,7 @@ export default function About() {
               <Button
                 className={classes.button}
                 variant="contained"
-                href="https://drive.google.com/file/d/1F3WhE5k9eoReJ7TFJHpGievOquyDsM-J/view?usp=sharing"
+                href="https://drive.google.com/file/d/1I88zvFp4RBXdJInscD2PV7W1BQffH9sO/view?usp=share_link"
                 target="_blank"
                 startIcon={<SaveIcon />}
               >
