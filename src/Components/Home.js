@@ -130,13 +130,12 @@ function Home() {
                 >
                   👋
                 </motion.div>{" "}
-                I'm Panagiotis Mentzelopoulos,
+                I'm Panos
                 <div className={classes.writer}>
                   <Typewriter
                     options={{
                       strings: [
                         "Senior Integration Engineer",
-                        "Software Engineer",
                         "Full-Stack Developer",
                       ],
                       autoStart: true,
@@ -164,8 +163,8 @@ function Home() {
                 gutterBottom
               >
                 I'm a highly self-motivated and goal-oriented IT professional
-                with a strong background in web development and technical
-                support. I have extensive experience building scalable and
+                with a strong background in Software Engineering and Technical
+                Operations. I have extensive experience building scalable and
                 secure full-stack web applications, utilizing a range of
                 programming languages and technologies, including React,
                 Next.JS, Node.JS, TypeScript, SQL and NoSQL databases, REST

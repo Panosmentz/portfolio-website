@@ -4,12 +4,10 @@ import Grid from "@material-ui/core/Grid";
 import Footer from "./Footer";
 import Typography from "@material-ui/core/Typography";
 import ProjectsImage from "../assets/projects.svg";
-import SaveIcon from "@material-ui/icons/Save";
 import Me from "../assets/me.jpg";
 import SkillsComponent from "./utils/SkillsComponent";
 import TimelineComponent from "./utils/TimelineComponent";
 import AccordionComponent from "./utils/AccordionComponent";
-import { Button } from "@material-ui/core";
 import HashLoader from "react-spinners/HashLoader";
 import "@fontsource/source-code-pro";
 import FadeInWhenVisible from "./utils/FadeInWhenVisible";
@@ -171,8 +169,8 @@ export default function About() {
                   align="left"
                 >
                   I'm a highly self-motivated and goal-oriented IT professional
-                  with a strong background in web development and technical
-                  support. I have extensive experience building scalable and
+                  with a strong background in Software Engineering and Technical
+                  Operations. I have extensive experience building scalable and
                   secure full-stack web applications, utilizing a range of
                   programming languages and technologies, including React,
                   Next.JS, Node.JS, TypeScript, SQL and NoSQL databases, REST
@@ -231,17 +229,6 @@ export default function About() {
               </FadeInWhenVisible>
             </Grid>
 
-            <Grid item xs={12}>
-              <Button
-                className={classes.button}
-                variant="contained"
-                href="https://drive.google.com/file/d/1I88zvFp4RBXdJInscD2PV7W1BQffH9sO/view?usp=share_link"
-                target="_blank"
-                startIcon={<SaveIcon />}
-              >
-                Download PDF version
-              </Button>
-            </Grid>
             <Footer />
           </Grid>
         </div>
