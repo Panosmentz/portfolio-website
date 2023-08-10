@@ -137,6 +137,7 @@ function Home() {
                       strings: [
                         "Senior Integration Engineer",
                         "Full-Stack Developer",
+                        "Aspiring DevOps Engineer",
                       ],
                       autoStart: true,
                       loop: true,
@@ -162,16 +163,13 @@ function Home() {
                 variant="h4"
                 gutterBottom
               >
-                I'm a highly self-motivated and goal-oriented IT professional
-                with a strong background in Software Engineering and Technical
-                Operations. I have extensive experience building scalable and
-                secure full-stack web applications, utilizing a range of
-                programming languages and technologies, including React,
-                Next.JS, Node.JS, TypeScript, SQL and NoSQL databases, REST
-                APIs, and more. This exposure to a wide variety of technologies
-                has allowed me to develop a well-rounded skill set, enabling me
-                to adapt to new programming languages and technologies quickly
-                and efficiently.
+                I am a highly self-motivated and goal-oriented software
+                engineer, with a background in web application development and
+                operations. My skillset includes React, Next.JS, Node.JS,
+                TypeScript, SQL and NoSQL databases, REST APIs, AWS, Docker,
+                Git, Bash and more. As a lifelong learner passionate about
+                technology, I aspire to grow my skills and knowledge in DevOps
+                and cloud computing.
               </Typography>
 
               <Typography
