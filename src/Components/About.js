@@ -123,7 +123,7 @@ export default function About() {
                   gutterBottom
                   align="center"
                 >
-                  Panagiotis Mentzelopoulos
+                  Panos Mentzelopoulos
                 </Typography>
 
                 <Typography
